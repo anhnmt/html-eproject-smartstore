@@ -1,0 +1,1238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>eProject - Smart Store</title>
+
+    <!--=== Favicon ===-->
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+
+    <!-- Google Font -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800|Oswald:200,300,400,500,600,700">
+
+    <!--=== Bootstrap CSS ===-->
+    <link href="css/bootstrap/bootstrap.min.css" rel="stylesheet">
+    <!--=== Font-Awesome CSS ===-->
+    <link href="css/fontawesome/all.min.css" rel="stylesheet">
+    <!--=== Animate CSS ===-->
+    <link href="css/animate.css/animate.css" rel="stylesheet">
+    <!--=== Slick Slider CSS ===-->
+    <link href="css/slick/slick.css" rel="stylesheet">
+    <link href="css/slick/hero-slider.css" rel="stylesheet">
+    <!--=== Style CSS ===-->
+    <link href="css/style.css" rel="stylesheet">
+    <!--=== Custom CSS ===-->
+    <link href="css/custom.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-top d-none d-md-block">
+            <div class="container">
+                <div class="row py-3 no-gutters">
+                    <div class="col-8 d-flex justify-content-start">
+                        <div class="row header-links d-flex">
+                            <div class="col-auto">
+                                <a href="javascript:;"><i class="far fa-shipping-fast"></i> <span>Check orders</span></a>
+                            </div>
+                            <div class="col-auto">
+                                <a href="javascript:;"><i class="far fa-life-ring"></i> <span>Contact Us</span></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4 d-flex justify-content-end">
+                        <div class="header-account">
+                            <a href="login.html" data-toggle="tooltip" title="Login"><i class="fas fa-user"></i> <span>Login</span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="header-middle py-3">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="middle-left col-md-3 my-2">
+                        <div class="header-logo d-flex justify-content-center justify-content-md-start">
+                            <a href="index.html"><img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="images/logo.png" alt=""></a>
+                        </div>
+                    </div>
+
+                    <div class="middle-right col-md-9 mt-3 mt-md-0">
+                        <div class="row align-items-center">
+                            <div class="header-search col-md-7 d-none d-md-block">
+                                <div class="row d-flex justify-content-end">
+                                    <div class="col-9">
+                                        <form action="#">
+                                            <div class="input-group search-box">
+                                                <input class="form-control my-0 py-1 amber-border" type="text" placeholder="Search .." aria-label="Search" name="q">
+                                                <div class="input-group-append">
+                                                    <button type="submit"><i class="far fa-search"></i></button>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="header-shop col-md-5">
+                                <div class="row d-flex justify-content-around justify-content-md-end">
+                                    <div class="header-menu d-md-none col-auto px-0 px-md-2">
+                                        <a href="javascript:void(0);" class="navbar-toggler">
+                                            <i class="far fa-bars"></i>
+                                        </a>
+                                    </div>
+
+                                    <div class="header-wishlist col-auto px-0 px-md-2">
+                                        <a href="wishlist.html" data-toggle="tooltip" title="Wishlist">
+                                            <i class="far fa-heart"></i>
+                                            <span class="wishlist-quantity badge badge-pill badge-warning">0</span>
+                                        </a>
+                                    </div>
+
+                                    <div class="header-cart col-auto px-0 px-md-2">
+                                        <a href="cart.html" data-toggle="tooltip" title="Cart">
+                                            <i class="far fa-shopping-cart"></i>
+                                            <span class="cart-quantity badge badge-pill badge-warning">0</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="header-bottom bg-white">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-12">
+                        <div class="header-menu">
+                            <div class="main-menu">
+                                <nav class="navbar navbar-expand-md p-0">
+                                    <div class="collapse navbar-collapse" id="header-navbar">
+                                        <ul class="navbar-nav mr-auto navbar-expand-md">
+                                            <li class="nav-item">
+                                                <a class="nav-link " href="index.html">Home</a>
+                                            </li>
+
+                                            <li class="nav-item">
+                                                <a class="nav-link active" href="shop.html">Shop</a>
+                                            </li>
+
+                                            <li class="nav-item">
+                                                <a class="nav-link " href="blog.html">Blog</a>
+                                            </li>
+
+                                            <li class="nav-item">
+                                                <a class="nav-link" href="contact.html">Contact Us</a>
+                                            </li>
+
+                                            <li class="nav-item dropdown">
+                                                <a class="nav-link dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" href="login.html">Acount</a>
+
+                                                <ul class="dropdown-menu">
+                                                    <li class="dropdown-item">
+                                                        <a href="wishlist.html">My Wishist</a>
+                                                    </li>
+
+                                                    <li class="dropdown-item">
+                                                        <a href="cart.html">Cart</a>
+                                                    </li>
+
+                                                    <li class="dropdown-item">
+                                                        <div id="header-account1">
+                                                            <a href="login.html" data-toggle="tooltip" title="Login"><i class="fas fa-user"></i> <span>Login</span></a>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main -->
+    <main class="main">
+
+        <div class="main-breadcrumbs pb-3">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="breadcrumb-content">
+                            <ul>
+                                <li><a href="index.html">HOME</a></li>
+                                <li>Shop</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container" style="margin-bottom: 50px;">
+            <div class="row">
+                <div class="col-md-3 hidden-sm hidden-xs">
+                    <div class="left-sidebar">
+                        <div class="ft-product">
+                            <div class="text-product">
+                                <h5>Product Categories</h5>
+                            </div>
+                            <ul class="list-unstyled">
+                              <li><a href="shop.html">All Home Cabinetry</a></li>
+                              <li><a href="shop.html">Kitchen Cabinets</a></li>
+                              <li><a href="shop.html">Countertops, Sinks and More</a></li>
+                              <li><a href="shop.html">Samples</a></li>
+                              <li><a href="shop.html">Free Room Design</a></li>
+                              <li><a href="shop.html">Wardrobe</a></li>
+                              <li><a href="shop.html">Storage Cabinetry</a></li>
+                            </ul>  
+                        </div>
+                    </div>
+                   
+                </div>
+                <div class="col-md-9">
+                    <div class="shop-action">
+                        <p> Showing 1–12 of 65 results</p>
+                        <div class="view-actions">  
+                            <i class="fas fa-th-large view-grip" aria-hidden="true" style="color: yellowgreen;"></i> 
+                            <i class="fas fa-list-ul view-list" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                    <div class="shop-item" style="display: block">
+                        <div class="col-12">
+                            <div class="row no-gutters">
+                                <div class="col-md-3 col-6 pt-2 pb-md-3 px-1">
+                                    <div class="item-product" data-id="1" data-name="Circulus Cabinet" data-cat="wardrop" data-img="images/products/wardrobe/pro-01.jpg" data-price="1125.00" data-old-price="0" data-quantity="1">
+                                        <div class="item-image">
+                                            <a href="product.html" title="Circulus Cabinet">
+                                                <img class="lazy loaded" src="images/products/wardrobe/pro-01.jpg" data-src="images/products/wardrobe/pro-01.jpg" alt="Circulus Cabinet" data-was-processed="true">
+                                            </a>
+    
+                                            <div class="item-wishlist">
+                                                <a class="add-wishlist" data-toggle="tooltip" title="" data-original-title="Add to Wishlist"><i class="far fa-heart"></i></a>
+                                                <a class="add-cart" data-toggle="tooltip" title="" data-original-title="Add to Cart"><i class="far fa-shopping-cart"></i></a>
+                                            </div>
+                                        </div>
+    
+                                        <div class="item-content">
+                                            <div class="item-title">
+                                                <a href="product.html" title="Circulus Cabinet">
+                                                    <span class="cat">New Arrival</span>
+                                                    <h5 class="title">Circulus Cabinet</h5>
+                                                </a>
+                                            </div>
+                                            <div class="item-price">
+                                                <h5 class="price">
+                                                    <span class="new">
+                                                        <span class="money">USD 1125.00</span>
+                                                    </span>
+                                                    <span class="old">
+                                                        <span class="money">USD 1124.00</span>
+                                                    </span>
+                                                </h5>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+    
+                                <div class="col-md-3 col-6 pt-2 pb-md-3 px-1">
+                                    <div class="item-product" data-id="2" data-name="Outline Entryway Cabinet" data-cat="wardrop" data-img="images/products/Wardrobe/pro-02.jpg" data-price="1023.00" data-old-price="1124.00" data-quantity="1">
+                                        <div class="item-image">
+                                            <a href="product.html" title="Outline Entryway Cabinet">
+                                                <img class="lazy loaded" src="images/products/Wardrobe/pro-02.jpg" data-src="images/products/Wardrobe/pro-02.jpg" alt="Outline Entryway Cabinet" data-was-processed="true">
+                                            </a>
+    
+                                            <div class="item-wishlist">
+                                                <a class="add-wishlist" data-toggle="tooltip" title="" data-original-title="Add to Wishlist"><i class="far fa-heart"></i></a>
+                                                <a class="add-cart" data-toggle="tooltip" title="" data-original-title="Add to Cart"><i class="far fa-shopping-cart"></i></a>
+                                            </div>
+                                        </div>
+    
+                                        <div class="item-content">
+                                            <div class="item-title">
+                                                <a href="product.html" title="Outline Entryway Cabinet">
+                                                    <span class="cat">New Arrival</span>
+                                                    <h5 class="title">Outline Entryway Cabinet</h5>
+                                                </a>
+                                            </div>
+                                            <div class="item-price">
+                                                <h5 class="price">
+                                                    <span class="new">
+                                                        <span class="money">USD 1023.00</span>
+                                                    </span>
+                                                    <span class="old">
+                                                         <span class="money">USD 1124.00</span>
+                                                    </span>
+                                                </h5>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+    
+                                <div class="col-md-3 col-6 pt-2 pb-md-3 px-1">
+                                    <div class="item-product" data-id="3" data-name="Cage Entryway Cabinet" data-cat="wardrop" data-img="images/products/Wardrobe/pro-03.jpg" data-price="824.00" data-old-price="0" data-quantity="1">
+                                        <div class="item-image">
+                                            <a href="product.html" title="Cage Entryway Cabinet">
+                                                <img class="lazy loaded" src="images/products/Wardrobe/pro-03.jpg" data-src="images/products/Wardrobe/pro-03.jpg" alt="Cage Entryway Cabinet" data-was-processed="true">
+                                            </a>
+    
+                                            <div class="item-wishlist">
+                                                <a class="add-wishlist" data-toggle="tooltip" title="" data-original-title="Add to Wishlist"><i class="far fa-heart"></i></a>
+                                                <a class="add-cart" data-toggle="tooltip" title="" data-original-title="Add to Cart"><i class="far fa-shopping-cart"></i></a>
+                                            </div>
+                                        </div>
+    
+                                        <div class="item-content">
+                                            <div class="item-title">
+                                                <a href="product.html" title="Cage Entryway Cabinet">
+                                                    <span class="cat"></span>
+                                                    <h5 class="title">Cage Entryway Cabinet</h5>
+                                                </a>
+                                            </div>
+                                            <div class="item-price">
+                                                <h5 class="price">
+                                                    <span class="new">
+                                                        <span class="money">USD 824.00</span>
+                                                    </span>
+                                                    <span class="old">
+                                                        <span class="money"></span>
+                                                    </span>
+                                                </h5>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+    
+                                <div class="col-md-3 col-6 pt-2 pb-md-3 px-1">
+                                    <div class="item-product" data-id="4" data-name="Annie Natural Storage Cabinet" data-cat="wardrop" data-img="images/products/Wardrobe/pro-04.jpg" data-price="1435.00" data-old-price="" data-quantity="1">
+                                        <div class="item-image">
+                                            <a href="product.html" title="Annie Natural Storage Cabinet">
+                                                <img class="lazy loaded" src="images/products/Wardrobe/pro-04.jpg" data-src="images/products/Wardrobe/pro-04.jpg" alt="Annie Natural Storage Cabinet" data-was-processed="true">
+                                            </a>
+    
+                                            <div class="item-wishlist">
+                                                <a class="add-wishlist" data-toggle="tooltip" title="" data-original-title="Add to Wishlist"><i class="far fa-heart"></i></a>
+                                                <a class="add-cart" data-toggle="tooltip" title="" data-original-title="Add to Cart"><i class="far fa-shopping-cart"></i></a>
+                                            </div>
+                                        </div>
+    
+                                        <div class="item-content">
+                                            <div class="item-title">
+                                                <a href="product.html" title="Annie Natural Storage Cabinet">
+                                                    <span class="cat"></span>
+                                                    <h5 class="title">Annie Natural Storage Cabinet</h5>
+                                                </a>
+                                            </div>
+                                            <div class="item-price">
+                                                <h5 class="price">
+                                                    <span class="new">
+                                                        <span class="money">USD 1435.00</span>
+                                                    </span>
+                                                    <span class="old">
+                                                        <span class="money"></span>
+                                                    </span>
+                                                </h5>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+    
+                                <div class="col-md-3 col-6 pt-2 pb-md-3 px-1">
+                                    <div class="item-product" data-id="5" data-name="Atwood Credenza" data-cat="wardrop" data-img="images/products/Wardrobe/pro-05.jpg" data-price="326.00" data-old-price="" data-quantity="1">
+                                        <div class="item-image">
+                                            <a href="product.html" title="Atwood Credenza">
+                                                <img class="lazy loaded" src="images/products/Wardrobe/pro-05.jpg" data-src="images/products/Wardrobe/pro-05.jpg" alt="Atwood Credenza" data-was-processed="true">
+                                            </a>
+    
+                                            <div class="item-wishlist">
+                                                <a class="add-wishlist" data-toggle="tooltip" title="" data-original-title="Add to Wishlist"><i class="far fa-heart"></i></a>
+                                                <a class="add-cart" data-toggle="tooltip" title="" data-original-title="Add to Cart"><i class="far fa-shopping-cart"></i></a>
+                                            </div>
+                                        </div>
+    
+                                        <div class="item-content">
+                                            <div class="item-title">
+                                                <a href="product.html" title="Atwood Credenza">
+                                                    <span class="cat"></span>
+                                                    <h5 class="title">Atwood Credenza</h5>
+                                                </a>
+                                            </div>
+                                            <div class="item-price">
+                                                <h5 class="price">
+                                                    <span class="new">
+                                                        <span class="money">USD 326.00</span>
+                                                    </span>
+                                                    <span class="old">
+                                                        <span class="money"></span>
+                                                    </span>
+                                                </h5>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+    
+                                <div class="col-md-3 col-6 pt-2 pb-md-3 px-1">
+                                    <div class="item-product" data-id="6" data-name="Strut Credenza Teak" data-cat="wardrop" data-img="images/products/Wardrobe/pro-06.jpg" data-price="745.00" data-old-price="7790000" data-quantity="1">
+                                        <div class="item-image">
+                                            <a href="product.html" title="Strut Credenza Teak">
+                                                <img class="lazy loaded" src="images/products/Wardrobe/pro-06.jpg" data-src="images/products/Wardrobe/pro-06.jpg" alt="Strut Credenza Teak" data-was-processed="true">
+                                            </a>
+    
+                                            <div class="item-wishlist">
+                                                <a class="add-wishlist" data-toggle="tooltip" title="" data-original-title="Add to Wishlist"><i class="far fa-heart"></i></a>
+                                                <a class="add-cart" data-toggle="tooltip" title="" data-original-title="Add to Cart"><i class="far fa-shopping-cart"></i></a>
+                                            </div>
+                                        </div>
+    
+                                        <div class="item-content">
+                                            <div class="item-title">
+                                                <a href="product.html" title="Strut Credenza Teak">
+                                                    <span class="cat"></span>
+                                                    <h5 class="title">Strut Credenza Teak</h5>
+                                                </a>
+                                            </div>
+                                            <div class="item-price">
+                                                <h5 class="price">
+                                                    <span class="new">
+                                                        <span class="money">USD 745.00</span>
+                                                    </span>
+                                                    <span class="old">
+                                                        <span class="money"></span>
+                                                    </span>
+                                                </h5>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+    
+                                <div class="col-md-3 col-6 pt-2 pb-md-3 px-1">
+                                    <div class="item-product" data-id="1" data-name="Circulus Cabinet" data-cat="wardrop" data-img="images/products/wardrobe/pro-01.jpg" data-price="1125.00" data-old-price="0" data-quantity="1">
+                                        <div class="item-image">
+                                            <a href="product.html" title="Circulus Cabinet">
+                                                <img class="lazy loaded" src="images/products/wardrobe/pro-01.jpg" data-src="images/products/wardrobe/pro-01.jpg" alt="Circulus Cabinet" data-was-processed="true">
+                                            </a>
+    
+                                            <div class="item-wishlist">
+                                                <a class="add-wishlist" data-toggle="tooltip" title="" data-original-title="Add to Wishlist"><i class="far fa-heart"></i></a>
+                                                <a class="add-cart" data-toggle="tooltip" title="" data-original-title="Add to Cart"><i class="far fa-shopping-cart"></i></a>
+                                            </div>
+                                        </div>
+    
+                                        <div class="item-content">
+                                            <div class="item-title">
+                                                <a href="product.html" title="Circulus Cabinet">
+                                                    <span class="cat">New Arrival</span>
+                                                    <h5 class="title">Circulus Cabinet</h5>
+                                                </a>
+                                            </div>
+                                            <div class="item-price">
+                                                <h5 class="price">
+                                                    <span class="new">
+                                                        <span class="money">USD 1125.00</span>
+                                                    </span>
+                                                    <span class="old">
+                                                        <span class="money"></span>
+                                                    </span>
+                                                </h5>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+    
+                                <div class="col-md-3 col-6 pt-2 pb-md-3 px-1">
+                                    <div class="item-product" data-id="2" data-name="Outline Entryway Cabinet" data-cat="wardrop" data-img="images/products/Wardrobe/pro-02.jpg" data-price="1023.00" data-old-price="1124.00" data-quantity="1">
+                                        <div class="item-image">
+                                            <a href="product.html" title="Outline Entryway Cabinet">
+                                                <img class="lazy loaded" src="images/products/Wardrobe/pro-02.jpg" data-src="images/products/Wardrobe/pro-02.jpg" alt="Outline Entryway Cabinet" data-was-processed="true">
+                                            </a>
+    
+                                            <div class="item-wishlist">
+                                                <a class="add-wishlist" data-toggle="tooltip" title="" data-original-title="Add to Wishlist"><i class="far fa-heart"></i></a>
+                                                <a class="add-cart" data-toggle="tooltip" title="" data-original-title="Add to Cart"><i class="far fa-shopping-cart"></i></a>
+                                            </div>
+                                        </div>
+    
+                                        <div class="item-content">
+                                            <div class="item-title">
+                                                <a href="product.html" title="Outline Entryway Cabinet">
+                                                    <span class="cat">New Arrival</span>
+                                                    <h5 class="title">Outline Entryway Cabinet</h5>
+                                                </a>
+                                            </div>
+                                            <div class="item-price">
+                                                <h5 class="price">
+                                                    <span class="new">
+                                                        <span class="money">USD 1023.00</span>
+                                                    </span>
+                                                    <span class="old">
+                                                        <span class="money">USD 1124.00</span>
+                                                    </span>
+                                                </h5>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+    
+                                <div class="col-md-3 col-6 pt-2 pb-md-3 px-1">
+                                    <div class="item-product" data-id="3" data-name="Cage Entryway Cabinet" data-cat="wardrop" data-img="images/products/Wardrobe/pro-03.jpg" data-price="824.00" data-old-price="0" data-quantity="1">
+                                        <div class="item-image">
+                                            <a href="product.html" title="Cage Entryway Cabinet">
+                                                <img class="lazy loaded" src="images/products/Wardrobe/pro-03.jpg" data-src="images/products/Wardrobe/pro-03.jpg" alt="Cage Entryway Cabinet" data-was-processed="true">
+                                            </a>
+    
+                                            <div class="item-wishlist">
+                                                <a class="add-wishlist" data-toggle="tooltip" title="" data-original-title="Add to Wishlist"><i class="far fa-heart"></i></a>
+                                                <a class="add-cart" data-toggle="tooltip" title="" data-original-title="Add to Cart"><i class="far fa-shopping-cart"></i></a>
+                                            </div>
+                                        </div>
+    
+                                        <div class="item-content">
+                                            <div class="item-title">
+                                                <a href="product.html" title="Cage Entryway Cabinet">
+                                                    <span class="cat"></span>
+                                                    <h5 class="title">Cage Entryway Cabinet</h5>
+                                                </a>
+                                            </div>
+                                            <div class="item-price">
+                                                <h5 class="price">
+                                                    <span class="new">
+                                                        <span class="money">USD 824.00</span>
+                                                    </span>
+                                                    <span class="old">
+                                                        <span class="money"></span>
+                                                    </span>
+                                                </h5>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+    
+                                <div class="col-md-3 col-6 pt-2 pb-md-3 px-1">
+                                    <div class="item-product" data-id="4" data-name="Annie Natural Storage Cabinet" data-cat="wardrop" data-img="images/products/Wardrobe/pro-04.jpg" data-price="1435.00" data-old-price="" data-quantity="1">
+                                        <div class="item-image">
+                                            <a href="product.html" title="Annie Natural Storage Cabinet">
+                                                <img class="lazy loaded" src="images/products/Wardrobe/pro-04.jpg" data-src="images/products/Wardrobe/pro-04.jpg" alt="Annie Natural Storage Cabinet" data-was-processed="true">
+                                            </a>
+    
+                                            <div class="item-wishlist">
+                                                <a class="add-wishlist" data-toggle="tooltip" title="" data-original-title="Add to Wishlist"><i class="far fa-heart"></i></a>
+                                                <a class="add-cart" data-toggle="tooltip" title="" data-original-title="Add to Cart"><i class="far fa-shopping-cart"></i></a>
+                                            </div>
+                                        </div>
+    
+                                        <div class="item-content">
+                                            <div class="item-title">
+                                                <a href="product.html" title="Annie Natural Storage Cabinet">
+                                                    <span class="cat"></span>
+                                                    <h5 class="title">Annie Natural Storage Cabinet</h5>
+                                                </a>
+                                            </div>
+                                            <div class="item-price">
+                                                <h5 class="price">
+                                                    <span class="new">
+                                                        <span class="money">USD 1435.00</span>
+                                                    </span>
+                                                    <span class="old">
+                                                        <span class="money"></span>
+                                                    </span>
+                                                </h5>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+    
+                                <div class="col-md-3 col-6 pt-2 pb-md-3 px-1">
+                                    <div class="item-product" data-id="5" data-name="Atwood Credenza" data-cat="wardrop" data-img="images/products/Wardrobe/pro-05.jpg" data-price="326.00" data-old-price="" data-quantity="1">
+                                        <div class="item-image">
+                                            <a href="product.html" title="Atwood Credenza">
+                                                <img class="lazy loaded" src="images/products/Wardrobe/pro-05.jpg" data-src="images/products/Wardrobe/pro-05.jpg" alt="Atwood Credenza" data-was-processed="true">
+                                            </a>
+    
+                                            <div class="item-wishlist">
+                                                <a class="add-wishlist" data-toggle="tooltip" title="" data-original-title="Add to Wishlist"><i class="far fa-heart"></i></a>
+                                                <a class="add-cart" data-toggle="tooltip" title="" data-original-title="Add to Cart"><i class="far fa-shopping-cart"></i></a>
+                                            </div>
+                                        </div>
+    
+                                        <div class="item-content">
+                                            <div class="item-title">
+                                                <a href="product.html" title="Atwood Credenza">
+                                                    <span class="cat"></span>
+                                                    <h5 class="title">Atwood Credenza</h5>
+                                                </a>
+                                            </div>
+                                            <div class="item-price">
+                                                <h5 class="price">
+                                                    <span class="new">
+                                                        <span class="money">USD 326.00</span>
+                                                    </span>
+                                                    <span class="old">
+                                                        <span class="money"></span>
+                                                    </span>
+                                                </h5>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+    
+                                <div class="col-md-3 col-6 pt-2 pb-md-3 px-1">
+                                    <div class="item-product" data-id="6" data-name="Strut Credenza Teak" data-cat="wardrop" data-img="images/products/Wardrobe/pro-06.jpg" data-price="745.00" data-old-price="7790000" data-quantity="1">
+                                        <div class="item-image">
+                                            <a href="product.html" title="Strut Credenza Teak">
+                                                <img class="lazy loaded" src="images/products/Wardrobe/pro-06.jpg" data-src="images/products/Wardrobe/pro-06.jpg" alt="Strut Credenza Teak" data-was-processed="true">
+                                            </a>
+    
+                                            <div class="item-wishlist">
+                                                <a class="add-wishlist" data-toggle="tooltip" title="" data-original-title="Add to Wishlist"><i class="far fa-heart"></i></a>
+                                                <a class="add-cart" data-toggle="tooltip" title="" data-original-title="Add to Cart"><i class="far fa-shopping-cart"></i></a>
+                                            </div>
+                                        </div>
+    
+                                        <div class="item-content">
+                                            <div class="item-title">
+                                                <a href="product.html" title="Strut Credenza Teak">
+                                                    <span class="cat"></span>
+                                                    <h5 class="title">Strut Credenza Teak</h5>
+                                                </a>
+                                            </div>
+                                            <div class="item-price">
+                                                <h5 class="price">
+                                                    <span class="new">
+                                                        <span class="money">USD 745.00</span>
+                                                    </span>
+                                                    <span class="old">
+                                                        <span class="money"></span>
+                                                    </span>
+                                                </h5>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+    
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="shop-item-list" style="display: none">
+                        
+                        <ul class="list-unstyled">
+
+                            <li>
+                                <div class="item-product" data-id="1" data-name="Circulus Cabinet" data-cat="wardrop" data-img="images/products/wardrobe/pro-01.jpg" data-price="1125.00" data-old-price="0" data-quantity="1">
+                                    <div class="item-image col-ms-3" style="width: 30%; float: left;">
+                                        <a href="product.html" title="Circulus Cabinet">
+                                            <img class="lazy loaded" src="images/products/wardrobe/pro-01.jpg" data-src="images/products/wardrobe/pro-01.jpg" alt="Circulus Cabinet" data-was-processed="true">
+                                        </a>
+                                    </div>
+
+                                    <div class="item-content col-ms-9">
+                                        <div class="item-title col-xs-6 col-sm-6 col-md-6 col-lg-6" style="float: left;">
+                                            <a href="product.html" title="Circulus Cabinet">
+                                                <span class="cat">New Arrival</span>
+                                                <div class="product-rating">
+                                                    <div class="rating-wrap">
+                                                        <div class="star-rating" style="color: khaki;">
+                                                            <i class="fa fa-star"></i>
+                                                            <i class="fa fa-star"></i>
+                                                            <i class="fa fa-star"></i>
+                                                            <i class="fa fa-star"></i>
+                                                            <i class="fa fa-star"></i>
+                                                        </div>
+                                                    </div>
+                                                </div> 
+                                                <h5 class="title">Circulus Cabinet</h5>
+                                                <ul class="list-unstyled">
+                                                    <li>Accent Furnitur</li>
+                                                    <li>Wood/Faux Wood</li>
+                                                    <li>ACT20</li>
+                                                </ul>
+
+                                                <h5 class="price" style="margin-top: 30px;width: 100%;text-align: center;">
+                                                    <span class="new">
+                                                        <span class="money">USD 1125.00</span>
+                                                    </span>
+                                                    <span class="old">
+                                                        <span class="money"></span>
+                                                    </span>
+                                                </h5>
+                                            </a>
+                                        </div>
+                                        
+                                        <div class="item-price col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                            <div style="clear: both;">
+                                                <div>
+                                                    <div class="" style="margin-top: 50px;text-align: center;">
+                                                        <a class="add-wishlist" data-toggle="tooltip" title="" data-original-title="Add to Wishlist"><span style="padding: 5px; background-color: red; color: white;">Add to Wishlist</span></a>
+                                                    </div>
+                                                </div>
+
+                                                <div>
+                                                    <div class="" style="margin-top: 50px;text-align: center;">
+                                                        <a class="add-cart" data-toggle="tooltip" title="" data-original-title="Add to Cart"><span style="padding: 5px 18px; background-color: red; color: white;">Add to Cart</span></a>
+                                                    </div>
+                                                </div>
+                                                
+                                               
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div style="clear: both;"></div>
+                            </li>
+
+                            <li>
+                                <div class="item-product" data-id="1" data-name="Outline Entryway Cabinet" data-cat="wardrop" data-img="images/products/wardrobe/pro-02.jpg" data-price="1023.00" data-old-price="0" data-quantity="1">
+                                    <div class="item-image col-ms-3" style="width: 30%; float: left;left: -100;">
+                                        <a href="product.html" title="Outline Entryway Cabinet">
+                                            <img class="lazy loaded" src="images/products/wardrobe/pro-02.jpg" data-src="images/products/wardrobe/pro-02.jpg" alt="Outline Entryway Cabinet" data-was-processed="true">
+                                        </a>
+                                    </div>
+
+                                    <div class="item-content col-ms-9">
+                                        <div class="item-title col-xs-6 col-sm-6 col-md-6 col-lg-6" style="float: left;">
+                                            <a href="product.html" title="Outline Entryway Cabinet">
+                                                <span class="cat">New Arrival</span>
+                                                <div class="product-rating">
+                                                    <div class="rating-wrap">
+                                                        <div class="star-rating" style="color: khaki;">
+                                                            <i class="fa fa-star"></i>
+                                                            <i class="fa fa-star"></i>
+                                                            <i class="fa fa-star"></i>
+                                                            <i class="fa fa-star"></i>
+                                                            <i class="fa fa-star"></i>
+                                                        </div>
+                                                    </div>
+                                                </div> 
+                                                <h5 class="title">Outline Entryway Cabinet</h5>
+                                                <ul class="list-unstyled">
+                                                    <li>Accent Furnitur</li>
+                                                    <li>Wood/Faux Wood</li>
+                                                    <li>ACT20</li>
+                                                </ul>
+
+                                                <h5 class="price" style="margin-top: 30px;width: 100%;text-align: center;">
+                                                    <span class="new">
+                                                        <span class="money">USD 1023.00</span>
+                                                    </span>
+                                                    <span class="old">
+                                                        <span class="money"></span>
+                                                    </span>
+                                                </h5>
+                                            </a>
+                                        </div>
+                                        
+                                        <div class="item-price col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                            <div style="clear: both;">
+                                                <div>
+                                                    <div class="" style="margin-top: 50px;text-align: center;">
+                                                        <a class="add-wishlist" data-toggle="tooltip" title="" data-original-title="Add to Wishlist"><span style="padding: 5px; background-color: red; color: white;">Add to Wishlist</span></a>
+                                                    </div>
+                                                </div>
+
+                                                <div>
+                                                    <div class="" style="margin-top: 50px;text-align: center;">
+                                                        <a class="add-cart" data-toggle="tooltip" title="" data-original-title="Add to Cart"><span style="padding: 5px 18px; background-color: red; color: white;">Add to Cart</span></a>
+                                                    </div>
+                                                </div>
+                                                
+                                               
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div style="clear: both;"></div>
+                            </li>
+                            
+                            <li>
+                                <div class="item-product" data-id="1" data-name="Circulus Cabinet" data-cat="wardrop" data-img="images/products/wardrobe/pro-03.jpg" data-price="1125.00" data-old-price="0" data-quantity="1">
+                                    <div class="item-image col-ms-3" style="width: 30%; float: left;">
+                                        <a href="product.html" title="Circulus Cabinet">
+                                            <img class="lazy loaded" src="images/products/wardrobe/pro-03.jpg" data-src="images/products/wardrobe/pro-03.jpg" alt="Circulus Cabinet" data-was-processed="true">
+                                        </a>
+                                    </div>
+
+                                    <div class="item-content col-ms-9">
+                                        <div class="item-title col-xs-6 col-sm-6 col-md-6 col-lg-6" style="float: left;">
+                                            <a href="product.html" title="Circulus Cabinet">
+                                                <span class="cat">New Arrival</span>
+                                                <div class="product-rating">
+                                                    <div class="rating-wrap">
+                                                        <div class="star-rating" style="color: khaki;">
+                                                            <i class="fa fa-star"></i>
+                                                            <i class="fa fa-star"></i>
+                                                            <i class="fa fa-star"></i>
+                                                            <i class="fa fa-star"></i>
+                                                            <i class="fa fa-star"></i>
+                                                        </div>
+                                                    </div>
+                                                </div> 
+                                                <h5 class="title">Circulus Cabinet</h5>
+                                                <ul class="list-unstyled">
+                                                    <li>Accent Furnitur</li>
+                                                    <li>Wood/Faux Wood</li>
+                                                    <li>ACT20</li>
+                                                </ul>
+
+                                                <h5 class="price" style="margin-top: 30px;width: 100%;text-align: center;">
+                                                    <span class="new">
+                                                        <span class="money">USD 1125.00</span>
+                                                    </span>
+                                                    <span class="old">
+                                                        <span class="money"></span>
+                                                    </span>
+                                                </h5>
+                                            </a>
+                                        </div>
+                                        
+                                        <div class="item-price col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                            <div style="clear: both;">
+                                                <div>
+                                                    <div class="" style="margin-top: 50px;text-align: center;">
+                                                        <a class="add-wishlist" data-toggle="tooltip" title="" data-original-title="Add to Wishlist"><span style="padding: 5px; background-color: red; color: white;">Add to Wishlist</span></a>
+                                                    </div>
+                                                </div>
+
+                                                <div>
+                                                    <div class="" style="margin-top: 50px;text-align: center;">
+                                                        <a class="add-cart" data-toggle="tooltip" title="" data-original-title="Add to Cart"><span style="padding: 5px 18px; background-color: red; color: white;">Add to Cart</span></a>
+                                                    </div>
+                                                </div>
+                                                
+                                               
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div style="clear: both;"></div>
+                            </li>
+
+                            <li>
+                                <div class="item-product" data-id="1" data-name="Circulus Cabinet" data-cat="wardrop" data-img="images/products/wardrobe/pro-04.jpg" data-price="1125.00" data-old-price="0" data-quantity="1">
+                                    <div class="item-image col-ms-3" style="width: 30%; float: left;">
+                                        <a href="product.html" title="Circulus Cabinet">
+                                            <img class="lazy loaded" src="images/products/wardrobe/pro-04.jpg" data-src="images/products/wardrobe/pro-04.jpg" alt="Circulus Cabinet" data-was-processed="true">
+                                        </a>
+                                    </div>
+
+                                    <div class="item-content col-ms-9">
+                                        <div class="item-title col-xs-6 col-sm-6 col-md-6 col-lg-6" style="float: left;">
+                                            <a href="product.html" title="Circulus Cabinet">
+                                                <span class="cat">New Arrival</span>
+                                                <div class="product-rating">
+                                                    <div class="rating-wrap">
+                                                        <div class="star-rating" style="color: khaki;">
+                                                            <i class="fa fa-star"></i>
+                                                            <i class="fa fa-star"></i>
+                                                            <i class="fa fa-star"></i>
+                                                            <i class="fa fa-star"></i>
+                                                            <i class="fa fa-star"></i>
+                                                        </div>
+                                                    </div>
+                                                </div> 
+                                                <h5 class="title">Circulus Cabinet</h5>
+                                                <ul class="list-unstyled">
+                                                    <li>Accent Furnitur</li>
+                                                    <li>Wood/Faux Wood</li>
+                                                    <li>ACT20</li>
+                                                </ul>
+
+                                                <h5 class="price" style="margin-top: 30px;width: 100%;text-align: center;">
+                                                    <span class="new">
+                                                        <span class="money">USD 1125.00</span>
+                                                    </span>
+                                                    <span class="old">
+                                                        <span class="money"></span>
+                                                    </span>
+                                                </h5>
+                                            </a>
+                                        </div>
+                                        
+                                        <div class="item-price col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                            <div style="clear: both;">
+                                                <div>
+                                                    <div class="" style="margin-top: 50px;text-align: center;">
+                                                        <a class="add-wishlist" data-toggle="tooltip" title="" data-original-title="Add to Wishlist"><span style="padding: 5px; background-color: red; color: white;">Add to Wishlist</span></a>
+                                                    </div>
+                                                </div>
+
+                                                <div>
+                                                    <div class="" style="margin-top: 50px;text-align: center;">
+                                                        <a class="add-cart" data-toggle="tooltip" title="" data-original-title="Add to Cart"><span style="padding: 5px 18px; background-color: red; color: white;">Add to Cart</span></a>
+                                                    </div>
+                                                </div>
+                                                
+                                               
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div style="clear: both;"></div>
+                            </li>
+
+                            <li>
+                                <div class="item-product" data-id="1" data-name="Circulus Cabinet" data-cat="wardrop" data-img="images/products/wardrobe/pro-04.jpg" data-price="1125.00" data-old-price="0" data-quantity="1">
+                                    <div class="item-image col-ms-3" style="width: 30%; float: left;">
+                                        <a href="product.html" title="Circulus Cabinet">
+                                            <img class="lazy loaded" src="images/products/wardrobe/pro-04.jpg" data-src="images/products/wardrobe/pro-04.jpg" alt="Circulus Cabinet" data-was-processed="true">
+                                        </a>
+                                    </div>
+
+                                    <div class="item-content col-ms-9">
+                                        <div class="item-title col-xs-6 col-sm-6 col-md-6 col-lg-6" style="float: left;">
+                                            <a href="product.html" title="Circulus Cabinet">
+                                                <span class="cat">New Arrival</span>
+                                                <div class="product-rating">
+                                                    <div class="rating-wrap">
+                                                        <div class="star-rating" style="color: khaki;">
+                                                            <i class="fa fa-star"></i>
+                                                            <i class="fa fa-star"></i>
+                                                            <i class="fa fa-star"></i>
+                                                            <i class="fa fa-star"></i>
+                                                            <i class="fa fa-star"></i>
+                                                        </div>
+                                                    </div>
+                                                </div> 
+                                                <h5 class="title">Circulus Cabinet</h5>
+                                                <ul class="list-unstyled">
+                                                    <li>Accent Furnitur</li>
+                                                    <li>Wood/Faux Wood</li>
+                                                    <li>ACT20</li>
+                                                </ul>
+
+                                                <h5 class="price" style="margin-top: 30px;width: 100%;text-align: center;">
+                                                    <span class="new">
+                                                        <span class="money">USD 1125.00</span>
+                                                    </span>
+                                                    <span class="old">
+                                                        <span class="money"></span>
+                                                    </span>
+                                                </h5>
+                                            </a>
+                                        </div>
+                                        
+                                        <div class="item-price col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                            <div style="clear: both;">
+                                                <div>
+                                                    <div class="" style="margin-top: 50px;text-align: center;">
+                                                        <a class="add-wishlist" data-toggle="tooltip" title="" data-original-title="Add to Wishlist"><span style="padding: 5px; background-color: red; color: white;">Add to Wishlist</span></a>
+                                                    </div>
+                                                </div>
+
+                                                <div>
+                                                    <div class="" style="margin-top: 50px;text-align: center;">
+                                                        <a class="add-cart" data-toggle="tooltip" title="" data-original-title="Add to Cart"><span style="padding: 5px 18px; background-color: red; color: white;">Add to Cart</span></a>
+                                                    </div>
+                                                </div>
+                                                
+                                               
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div style="clear: both;"></div>
+                            </li>
+
+                            <li>
+                                <div class="item-product" data-id="1" data-name="Circulus Cabinet" data-cat="wardrop" data-img="images/products/wardrobe/pro-05.jpg" data-price="1125.00" data-old-price="0" data-quantity="1">
+                                    <div class="item-image col-ms-3" style="width: 30%; float: left;">
+                                        <a href="product.html" title="Circulus Cabinet">
+                                            <img class="lazy loaded" src="images/products/wardrobe/pro-05.jpg" data-src="images/products/wardrobe/pro-05.jpg" alt="Circulus Cabinet" data-was-processed="true">
+                                        </a>
+                                    </div>
+
+                                    <div class="item-content col-ms-9">
+                                        <div class="item-title col-xs-6 col-sm-6 col-md-6 col-lg-6" style="float: left;">
+                                            <a href="product.html" title="Circulus Cabinet">
+                                                <span class="cat">New Arrival</span>
+                                                <div class="product-rating">
+                                                    <div class="rating-wrap">
+                                                        <div class="star-rating" style="color: khaki;">
+                                                            <i class="fa fa-star"></i>
+                                                            <i class="fa fa-star"></i>
+                                                            <i class="fa fa-star"></i>
+                                                            <i class="fa fa-star"></i>
+                                                            <i class="fa fa-star"></i>
+                                                        </div>
+                                                    </div>
+                                                </div> 
+                                                <h5 class="title">Circulus Cabinet</h5>
+                                                <ul class="list-unstyled">
+                                                    <li>Accent Furnitur</li>
+                                                    <li>Wood/Faux Wood</li>
+                                                    <li>ACT20</li>
+                                                </ul>
+
+                                                <h5 class="price" style="margin-top: 30px;width: 100%;text-align: center;">
+                                                    <span class="new">
+                                                        <span class="money">USD 1125.00</span>
+                                                    </span>
+                                                    <span class="old">
+                                                        <span class="money"></span>
+                                                    </span>
+                                                </h5>
+                                            </a>
+                                        </div>
+                                        
+                                        <div class="item-price col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                            <div style="clear: both;">
+                                                <div>
+                                                    <div class="" style="margin-top: 50px;text-align: center;">
+                                                        <a class="add-wishlist" data-toggle="tooltip" title="" data-original-title="Add to Wishlist"><span style="padding: 5px; background-color: red; color: white;">Add to Wishlist</span></a>
+                                                    </div>
+                                                </div>
+
+                                                <div>
+                                                    <div class="" style="margin-top: 50px;text-align: center;">
+                                                        <a class="add-cart" data-toggle="tooltip" title="" data-original-title="Add to Cart"><span style="padding: 5px 18px; background-color: red; color: white;">Add to Cart</span></a>
+                                                    </div>
+                                                </div>
+                                                
+                                               
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div style="clear: both;"></div>
+                            </li>
+
+                            <li>
+                                <div class="item-product" data-id="1" data-name="Circulus Cabinet" data-cat="wardrop" data-img="images/products/wardrobe/pro-06.jpg" data-price="1125.00" data-old-price="0" data-quantity="1">
+                                    <div class="item-image col-ms-3" style="width: 30%; float: left;">
+                                        <a href="product.html" title="Circulus Cabinet">
+                                            <img class="lazy loaded" src="images/products/wardrobe/pro-06.jpg" data-src="images/products/wardrobe/pro-06.jpg" alt="Circulus Cabinet" data-was-processed="true">
+                                        </a>
+                                    </div>
+
+                                    <div class="item-content col-ms-9">
+                                        <div class="item-title col-xs-6 col-sm-6 col-md-6 col-lg-6" style="float: left;">
+                                            <a href="product.html" title="Circulus Cabinet">
+                                                <span class="cat">New Arrival</span>
+                                                <div class="product-rating">
+                                                    <div class="rating-wrap">
+                                                        <div class="star-rating" style="color: khaki;">
+                                                            <i class="fa fa-star"></i>
+                                                            <i class="fa fa-star"></i>
+                                                            <i class="fa fa-star"></i>
+                                                            <i class="fa fa-star"></i>
+                                                            <i class="fa fa-star"></i>
+                                                        </div>
+                                                    </div>
+                                                </div> 
+                                                <h5 class="title">Circulus Cabinet</h5>
+                                                <ul class="list-unstyled">
+                                                    <li>Accent Furnitur</li>
+                                                    <li>Wood/Faux Wood</li>
+                                                    <li>ACT20</li>
+                                                </ul>
+
+                                                <h5 class="price" style="margin-top: 30px;width: 100%;text-align: center;">
+                                                    <span class="new">
+                                                        <span class="money">USD 1125.00</span>
+                                                    </span>
+                                                    <span class="old">
+                                                        <span class="money"></span>
+                                                    </span>
+                                                </h5>
+                                            </a>
+                                        </div>
+                                        
+                                        <div class="item-price col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                            <div style="clear: both;">
+                                                <div>
+                                                    <div class="" style="margin-top: 50px;text-align: center;">
+                                                        <a class="add-wishlist" data-toggle="tooltip" title="" data-original-title="Add to Wishlist"><span style="padding: 5px; background-color: red; color: white;">Add to Wishlist</span></a>
+                                                    </div>
+                                                </div>
+
+                                                <div>
+                                                    <div class="" style="margin-top: 50px;text-align: center;">
+                                                        <a class="add-cart" data-toggle="tooltip" title="" data-original-title="Add to Cart"><span style="padding: 5px 18px; background-color: red; color: white;">Add to Cart</span></a>
+                                                    </div>
+                                                </div>
+                                                
+                                               
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div style="clear: both;"></div>
+                            </li>
+
+                        </ul>
+                    </div>
+
+                    <div class="container" style="margin-top: 10px;">
+                        <nav class="woocommerce-pagination">
+                            <ul class="page-numbers">
+                                <li>
+                                    <span aria-current="page" class="page-numbers current">1</span>
+                                </li>
+                                <li>
+                                    <a class="page-numbers" href="#">2</a>
+                                </li>
+                                <li>
+                                    <a class="page-numbers" href="#">3</a>
+                                </li>
+                                <li>
+                                    <span class="page-numbers dots">…</span>
+                                </li>
+                                <li>
+                                    <a class="page-numbers" href="#">5</a>
+                                </li>
+                                <li>
+                                    <a class="page-numbers" href="#">6</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+       
+        <div class="container">
+            <div class="row no-gutters">
+                
+            </div>
+        </div>
+        
+
+        <div class="call-to-action">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="call-action-inner">
+                            <div class="call-text">
+                                <h3>We Have <span>Great Deals</span> For You</h3>
+                                <p>30% discount when you pay from 25$ or more with code EE2020</p>
+                            </div>
+                            <div class="discover-now">
+                                <a href="javascript:;">DISCOVER NOW</a>
+                            </div>
+                            <div class="link-follow">
+                                <ul>
+                                    <li><a href="javascript:;"><i class="fab fa-facebook-f"></i></a></li>
+                                    <li><a href="javascript:;"><i class="fab fa-twitter"></i></a></li>
+                                    <li><a href="javascript:;"><i class="fab fa-youtube"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer pt-3">
+        <div class="footer-top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 col-12 mb-5">
+                        <div class="footer-widget">
+                            <h4 class="widget-title">CONTACT INFORMATION</h4>
+                            <p class="contact-info adress"><span>Address</span> Lorem ipsum dolor sit <br> Lorem Ipsum text</p>
+
+                            <p class="contact-info phone"><span>Phone</span> </p>
+                            <p><i class="fas fa-phone-square-alt"></i> 01234 567 890 <br><i class="fas fa-phone-square-alt"></i> 01234 567 891</p>
+                            <p></p>
+
+                            <p class="contact-info web "><span>Web</span> </p>
+                            <p><i class="fas fa-envelope"></i> info@example.com<br><i class="fas fa-globe"></i> www.example.com</p>
+                            <p></p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 col-12 mb-5">
+                        <div class="footer-widget">
+                            <h4 class="widget-title">Customer Service</h4>
+                            <ul class="link-widget">
+                                <li><a href="javascript:;">Contact</a></li>
+
+                                <li><a href="javascript:;">Feature</a></li>
+
+                                <li><a href="login.html">My Account</a></li>
+
+                                <li><a href="cart.html">Shop</a></li>
+
+                                <li><a href="checkout.html">Checkount</a></li>
+
+                                <li><a href="wishlist.html">Your Wishlist</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 col-12 mb-5">
+                        <div class="footer-widget">
+                            <h4 class="widget-title">About</h4>
+                            <ul class="link-widget">
+                                <li><a href="javascript:;">Track Your Order</a></li>
+
+                                <li><a href="javascript:;">Locate Store</a></li>
+
+                                <li><a href="javascript:;">Support</a></li>
+
+                                <li><a href="javascript:;">Terms &amp; Conditions</a></li>
+
+                                <li><a href="javascript:;">Shopping Cart</a></li>
+
+                                <li><a href="javascript:;">Shipping &amp; Returns</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom py-3">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 col-12">
+                        <div class="footer-copyright text-left">
+                            <p>© Copyright, All Rights Reserved</p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-12">
+                        <div class="footer-payments-image text-right">
+                            <img class="lazy" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="images/payment-support-large.png" alt="">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div class="overlay"></div>
+
+    <script src="js/requirejs/require.min.js" data-main="js/app.js"></script>
+    <script src="http://code.jquery.com/jquery.js"></script>
+    <script>
+        $('.view-grip').click(function(event) {
+            $('.shop-item').show(600);
+            $('.shop-item-list').hide();
+            $('.view-grip').css('color','yellowgreen');
+            $('.view-list').css('color','black');
+        });
+        $('.view-list').click(function(event) {
+            $('.shop-item-list').show(600);
+            $('.shop-item').hide();
+            $('.view-grip').css('color','black');
+            $('.view-list').css('color','yellowgreen');
+        });
+    </script>
+</body>
+
+</html>
