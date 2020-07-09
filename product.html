@@ -152,7 +152,8 @@
 
                                                     <li class="dropdown-item">
                                                         <div id="header-account1">
-                                                            <a href="login.html" data-toggle="tooltip" title="Login">Login</a>
+                                                            <a href="login.html" data-toggle="tooltip"
+                                                                title="Login">Login</a>
                                                         </div>
                                                     </li>
                                                 </ul>
@@ -218,36 +219,18 @@
                                         magnam, odio tenetur quis animi amet fugiat? Earum.</p>
                                 </div>
 
-                                <div class="product-variant color mb-2">
-                                    <h5>Please choose: </h5>
-                                    <label>Color</label>
-                                    <select name="color" id="color">
-                                        <option value="">Select color</option>
-                                        <option value="Gray">Gray</option>
-                                        <option value="White">White</option>
-                                        <option value="Black">Black</option>
-                                    </select>
-                                </div>
-
-                                <div class="product-variant color mb-2">
-                                    <label>Size</label>
-                                    <select name="color" id="color">
-                                        <option value="">Select Size</option>
-                                        <option value="Gray">Small</option>
-                                        <option value="White">High</option>
-                                        <option value="Black">Big high</option>
-                                    </select>
-                                </div>
+                                <h5>Please choose: </h5>
 
                                 <div class="product-variant quantity mb-2">
                                     <label>Quantity</label>
-                                    <input min="1" max="100" value="1" type="number">
-                                    <button type="button" class="btn btn-warning">Add to cart</button>
+                                    <input id="product-quantity" min="1" max="100" value="1" type="number">
+                                    <button type="button" class="btn btn-warning btn-cart">Add to cart</button>
                                 </div>
 
                                 <div class="product-action mb-2">
                                     <ul>
-                                        <li><a href="javascript:;" title="Add to Wishlist">+ Add to wishlist</a></li>
+                                        <li><a class="btn-wishlist" href="javascript:;" title="Add to Wishlist">+ Add to wishlist</a>
+                                        </li>
                                     </ul>
                                 </div>
                             </form>

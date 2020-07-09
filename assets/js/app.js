@@ -50,17 +50,45 @@ $(function () {
     });
 
     // Shop JS
-    $('.view-grip').click(function(event) {
-        $('.shop-item').show(600);
-        $('.shop-item-list').hide();
-        $('.view-grip').css('color','yellowgreen');
-        $('.view-list').css('color','black');
+    $(".view-grip").click(function (event) {
+        $(".shop-item").show(600);
+        $(".shop-item-list").hide();
+        $(".view-grip").css("color", "yellowgreen");
+        $(".view-list").css("color", "black");
     });
-    $('.view-list').click(function(event) {
-        $('.shop-item-list').show(600);
-        $('.shop-item').hide();
-        $('.view-grip').css('color','black');
-        $('.view-list').css('color','yellowgreen');
+    $(".view-list").click(function (event) {
+        $(".shop-item-list").show(600);
+        $(".shop-item").hide();
+        $(".view-grip").css("color", "black");
+        $(".view-list").css("color", "yellowgreen");
+    });
+
+    // Product JS
+    $(".btn-wishlist").click(function (event) {
+        event.preventDefault();
+        var id = 1;
+        var name = "Circulus Cabinet";
+        var cat = "wardrobe";
+        var price = "1125.00";
+        var image = "assets/images/products/wardrobe/pro-01.jpg";
+
+        WishlistManager.setWishlist(id, name, cat, price, image);
+        $(".wishlist-quantity").text(
+            WishlistManager.getTotalQuantityOfWishlist()
+        );
+    });
+
+    $(".btn-cart").click(function (event) {
+        event.preventDefault();
+        var id = 1;
+        var name = "Circulus Cabinet";
+        var cat = "wardrobe";
+        var price = "1125.00";
+        var quantity = $("#product-quantity").val();
+        var image = "assets/images/products/wardrobe/pro-01.jpg";
+    
+        ProductManager.setProduct(id, name, cat, price, quantity, image);
+        $(".cart-quantity").text(ProductManager.getTotalQuantityOfProduct());
     });
 
     /*---Validate login---*/
