@@ -1,0 +1,687 @@
+.form-control.is-invalid:focus,
+.was-validated .form-control:invalid:focus,
+.form-control.is-valid:focus,
+.was-validated .form-control:valid:focus,
+.btn-primary.focus,
+.btn-primary:focus {
+    box-shadow: none;
+}
+
+.breadcrumb-content {
+    padding: 22px 0;
+    background-image: url(../images/breadcrumbs.png);
+}
+
+.breadcrumb-content ul li {
+    display: inline-block;
+    text-transform: uppercase;
+    font-size: 20px;
+    margin-right: 13px;
+    padding-right: 13px;
+    position: relative;
+}
+
+.breadcrumb-content ul li:last-child {
+    margin-right: 0;
+}
+
+.breadcrumb-content ul li:not(:last-child)::before {
+    position: absolute;
+    content: "/";
+    right: 0;
+    top: 50%;
+    transform: translatey(-50%);
+}
+
+.breadcrumb-content ul li a {
+    color: #999;
+    margin-left: 10px;
+}
+
+
+/*
+    PRODUCT CSS
+*/
+
+.zoom-image {
+    border: 1px solid #f0f0f0;
+}
+
+.product-detail h1 {
+    text-transform: capitalize;
+    line-height: 20px;
+    font-size: 22px;
+    font-weight: 400;
+    margin-bottom: 22px;
+}
+
+.product-detail .product-desc {
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.product-detail .product-desc p {
+    font-size: 14px;
+    line-height: 26px;
+}
+
+.product-detail .price-box span {
+    font-size: 20px;
+    font-weight: 600;
+    margin-right: 5px;
+}
+
+.product-detail .price-box .old {
+    font-size: 100%;
+    font-weight: 400;
+    text-decoration: line-through;
+}
+
+.product-variant.quantity {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    align-items: center;
+}
+
+.product-variant.color label,
+.product-variant.quantity label {
+    font-weight: 500;
+    text-transform: capitalize;
+    font-size: 14px;
+    margin-bottom: 0;
+}
+
+.product-variant.quantity input {
+    border: 1px solid #ebebeb;
+    background: none;
+    height: 42px;
+    padding: 0 12px;
+    border-radius: 5px;
+    margin-left: 15px;
+    font-size: 15px;
+}
+
+.product-variant.color select {
+    border: 1px solid #ebebeb;
+    background: none;
+    height: 42px;
+    padding: 0 12px;
+    border-radius: 5px;
+    margin-left: 15px;
+    font-size: 15px;
+}
+
+.product-variant.quantity button {
+    border: 0;
+    font-size: 16px;
+    margin-left: 20px;
+    background: #ffd54c;
+    height: 42px;
+    text-transform: capitalize;
+}
+
+.product-action ul li a {
+    font-size: 14px;
+    line-height: 28px;
+}
+
+.product-info .col-12 {
+    background-color: #fff;
+}
+
+.product-content p {
+    line-height: 28px;
+}
+
+.product-info {
+    background: #f6f6f6;
+}
+
+.nav-tabs {
+    border-bottom: none;
+    padding-bottom: 15px;
+}
+
+.nav-tabs .nav-item {
+    margin-bottom: unset;
+}
+
+.nav-tabs .nav-link {
+    color: #a9a9a9;
+    border: none;
+    border-top-left-radius: .25rem;
+    border-top-right-radius: .25rem;
+    position: relative;
+}
+
+.product-info .nav-item .nav-link {
+    display: block;
+    float: left;
+    text-transform: capitalize;
+    font-size: 20px;
+    color: #a9a9a9;
+    font-weight: 600;
+    line-height: 26px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.nav-tabs .nav-item.show .nav-link,
+.nav-tabs .nav-link.active {
+    color: #333333;
+}
+
+.product-info .nav-item .nav-link::before {
+    content: "";
+    width: 0;
+    left: 0;
+    -webkit-transition: 0.3s;
+    -o-transition: 0.3s;
+    transition: 0.3s;
+    bottom: 0;
+    height: 2px;
+    background: #ffd54c;
+    position: absolute;
+}
+
+.product-info .nav-item .nav-link.active::before {
+    width: 100%;
+}
+
+.product-review h2 {
+    font-size: 18px;
+    font-weight: 500;
+    text-transform: capitalize;
+}
+
+.product-review-form textarea {
+    border: 1px solid #ddd;
+    background: none;
+    height: 120px;
+    resize: none;
+    width: 100%;
+    padding: 10px;
+}
+
+.product-review-form input {
+    border: 1px solid #ddd;
+    background: none;
+    width: 100%;
+    height: 40px;
+    padding: 10px;
+}
+
+.product-review-form button {
+    border: none;
+    background: #3E444A;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 700;
+    padding: 5px 15px;
+    display: block;
+    -webkit-transition: 0.3s;
+    -o-transition: 0.3s;
+    transition: 0.3s;
+    cursor: pointer;
+    margin-top: 20px;
+    border-radius: 5px;
+}
+
+.product-review-form button:hover {
+    background: #ffd54c;
+    color: #333;
+}
+
+
+/*
+    LOGIN CSS
+*/
+
+.login-submit {
+    text-align: right;
+}
+
+.account-form form {
+    border: 1px solid #f0f0f0;
+    padding: 23px 20px 29px;
+    border-radius: 5px;
+}
+
+.account-form h2 {
+    font-size: 28px;
+    text-transform: capitalize;
+    font-weight: 500;
+    line-height: 22px;
+    margin-bottom: 30px;
+}
+
+.account-form .mb-3{
+    margin-bottom: 130px;
+}
+
+.account-form label {
+    font-size: 15px;
+    font-weight: 800;
+    cursor: pointer;
+    line-height: 12px;
+    margin-bottom: 20px;
+    -webkit-transition: .3s;
+    -o-transition: .3s;
+    transition: .3s;
+}
+
+.account-form label span {
+    color: #ffd54c;
+}
+
+.account-form label.error {
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.login-submit label input[type="checkbox"] {
+    width: 15px;
+    height: 13px;
+    margin-right: 3px;
+}
+
+.login-submit a {
+    font-size: 13px;
+    float: left;
+    line-height: 39px;
+}
+
+.account-form button {
+    background: #ffd54c;
+    border: 0;
+    color: #fff;
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 700;
+    height: 34px;
+    line-height: 21px;
+    padding: 5px 20px;
+    text-transform: uppercase;
+    cursor: pointer;
+    -webkit-transition: 0.3s;
+    -o-transition: 0.3s;
+    transition: 0.3s;
+    margin-left: 20px;
+    border-radius: 20px;
+}
+
+.account-form button:hover {
+    background: #333;
+}
+
+
+
+/*
+    CHECKOUT CSS
+*/
+.order-table {
+    margin-bottom: 35px;
+}
+
+.checkout-form h3 {
+    font-size: 16px;
+    line-height: 30px;
+    padding: 5px 15px;
+    text-transform: uppercase;
+    color: #333;
+    background: #ffd54c;
+    font-weight: 600;
+}
+
+.checkout-form label {
+    font-weight: 600;
+}
+
+.checkout-form input {
+    border: 1px solid #f0f0f0;
+    background: none;
+    height: 40px;
+    width: 100%;
+    padding: 0 20px;
+    color: #333;
+}
+
+.checkout-form input[type="checkbox"] {
+    width: 15px;
+    height: 15px;
+    position: relative;
+    top: 2px;
+    margin-right: 10px;
+}
+
+.panel-default input[type="radio"] {
+    width: 15px;
+    height: 15px;
+    position: relative;
+    top: 2px;
+    margin-right: 10px;
+}
+
+.order-button button {
+    border: 0;
+    cursor: pointer;
+    font-size: 16px;
+    line-height: 30px;
+    padding: 5px 15px;
+    text-transform: capitalize;
+    color: #ffffff;
+    background: #333;
+    font-weight: 500;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+    margin-bottom: 0;
+    border-radius: 5px;
+}
+
+.order-button button:hover {
+    background: #ffd54c;
+    color: #333;
+}
+
+.order-notes label {
+    line-height: 13px;
+}
+
+.order-notes textarea {
+    border: 1px solid #e5e5e5;
+    border-radius: 0;
+    max-width: 100%;
+    padding: 0 30px 0 20px;
+    background: none;
+    font-size: 13px;
+    resize: none;
+    line-height: 45px;
+    width: 100%;
+    color: #333;
+}
+
+.checkout-form label span {
+    color: #ffd54c;
+}
+
+.order-table table {
+    width: 100%;
+}
+
+.order-table table thead tr th {
+    min-width: 50%;
+    text-align: center;
+    padding: 15px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.order-table table tbody tr td {
+    min-width: 50%;
+    text-align: center;
+    padding: 15px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.order-table table tfoot tr th {
+    min-width: 50%;
+    text-align: center;
+    padding: 15px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.order-table table tfoot tr td {
+    min-width: 50%;
+    text-align: center;
+    padding: 15px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.panel-default {
+    display: inline-block;
+}
+
+/*
+    CART CSS
+*/
+
+.table-desc {
+    border: 1px solid #f0f0f0;
+    margin-bottom: 60px;
+    margin-top: 2px;
+}
+
+.table-desc .cart-page table {
+    width: 100%;
+}
+
+.table-responsive table thead {
+    background: #f2f2f2;
+}
+
+.cart-page table thead tr:last-child th,
+.table-desc table tbody tr td:last-child {
+    border-right: 0;
+}
+
+.table-desc .cart-page table thead tr th {
+    border-bottom: 3px solid #ffd54c;
+    border-right: 1px solid #f0f0f0;
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: capitalize;
+    padding: 10px;
+    text-align: center;
+}
+
+.table-responsive table thead tr th {
+    text-align: center;
+}
+
+.table-desc .cart-page table tbody tr td.product-name a {
+    color: #333;
+    text-transform: capitalize;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.table-desc .cart-page table tbody tr td.product-quantity label {
+    font-weight: 600;
+    margin-right: 5px;
+}
+
+.table-desc .cart-page table tbody tr td.product-quantity input {
+    height: 40px;
+    padding: 0 5px 0 10px;
+    background: none;
+    border: 1px solid #f0f0f0;
+}
+
+.table-desc .cart-page table tbody tr td.product-remove {
+    min-width: 100px;
+}
+
+.table-desc .cart-page table tbody tr td {
+    border-bottom: 1px solid #f0f0f0;
+    border-right: 1px solid #f0f0f0;
+    text-align: center;
+    padding: 10px;
+}
+
+.table-responsive table tbody tr td {
+    border-right: 1px solid #f0f0f0;
+    font-weight: 500;
+    text-transform: capitalize;
+    font-size: 14px;
+    text-align: center;
+    min-width: 150px;
+}
+
+.coupon {
+    margin-bottom: 60px;
+}
+
+.coupon-code {
+    border: 1px solid #f0f0f0;
+}
+
+.coupon-code h3 {
+    color: #333;
+    line-height: 36px;
+    padding: 5px 15px;
+    background: #ffd54c;
+    text-transform: uppercase;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+@media only screen and (max-width: 767px) {
+    .coupon-code.left {
+        margin-bottom: 59px;
+    }
+}
+
+.coupon-inner {
+    padding: 10px 20px 25px;
+}
+
+.coupon-inner p {
+    font-size: 13px;
+    margin-bottom: 20px;
+}
+
+.coupon-inner input {
+    border: 1px solid #f0f0f0;
+    height: 42px;
+    background: none;
+    padding: 0 20px;
+    margin-right: 20px;
+    font-size: 12px;
+    color: #333;
+}
+
+@media only screen and (max-width: 991px) and (min-width: 768px) {
+    .coupon-inner input {
+        margin-bottom: 24px;
+        width: 100%;
+    }
+}
+
+.coupon-inner button {
+    background: #333;
+    border: 0;
+    color: #fff;
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 600;
+    height: 38px;
+    line-height: 18px;
+    padding: 10px 15px;
+    text-transform: uppercase;
+    cursor: pointer;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+    border-radius: 3px;
+}
+
+.coupon-inner button:hover {
+    background: #ffd54c;
+    color: #333;
+}
+
+.cart-subtotal {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+}
+
+.coupon-inner a {
+    display: block;
+    text-align: right;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #f0f0f0;
+    padding-bottom: 10px;
+    border-radius: 3px;
+}
+
+.checkout-btn {
+    text-align: right;
+}
+
+.checkout-btn a {
+    background: #333;
+    font-size: 12px;
+    padding: 5px 15px;
+    color: #fff;
+    line-height: 30px;
+    font-weight: 600;
+    display: inline-block;
+    text-transform: uppercase;
+    margin-bottom: 0;
+}
+
+.checkout-btn a:hover {
+    background: #ffd54c;
+    color: #333;
+}
+
+.cart-subtotal p {
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.cart-subtotal p.cart-amount {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+@media only screen and (max-width: 767px) {
+    .cart-subtotal p.cart-amount {
+        font-size: 14px;
+    }
+}
+
+.product-thumb img {
+    width: 75px;
+}
+
+
+/*
+    WISHLIST CSS
+*/
+
+.table-desc.wishlist table tbody tr td.product-add a {
+    background: #ffd54c;
+    font-size: 12px;
+    font-weight: 700;
+    height: 38px;
+    line-height: 18px;
+    padding: 10px 20px;
+    color: #333;
+    text-transform: uppercase;
+    border-radius: 3px;
+}
+
+.table-desc.wishlist table tbody tr td.product-add a:hover {
+    background: #333;
+    color: #fff;
+}
+
+.wishlist-share {
+    text-align: center;
+    padding: 20px 0;
+    border: 1px solid #f0f0f0;
+}
+
+.wishlist-share ul li {
+    display: inline-block;
+}
+
+.wishlist-share ul li a {
+    padding: 0 10px;
+    display: block;
+}
