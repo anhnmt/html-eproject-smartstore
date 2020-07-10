@@ -52,8 +52,8 @@ $(function () {
     /*---Check login---*/
     $(function() {
         if (typeof(Storage) !== 'undefined') {
-            if (UserManager.checkLogin()) {
-                $('.header-account').html('<i class="fas fa-user"></i> <span>Hello: ' + UserManager.checkLogin() + '</span> | <a id="btn_logout" data-toggle="tooltip" title="Log out"><span>Log out</span></a>');
+            if (UserManager.isLogin()) {
+                $('.header-account').html('<i class="fas fa-user"></i> <span>Hello: ' + UserManager.isLogin() + '</span> | <a id="btn_logout" data-toggle="tooltip" title="Log out"><span>Log out</span></a>');
                 $('[data-toggle="tooltip"]').tooltip();
                 $('#header-account1').html('<a id="btn_logout">Log out</a>');
                 $('[data-toggle="tooltip"]').tooltip(); 

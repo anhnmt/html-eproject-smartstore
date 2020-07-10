@@ -1,54 +1,56 @@
 function formatNumber(num) {
-    return ' USD ' + num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1.');
+    return " USD " + num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.");
 }
 
-var WishlistManager = (function() {
+var WishlistManager = (function () {
     var objToReturn = {};
 
     /*
     PRIVATE
     */
-    if (typeof(Storage) !== "undefined") {
-        localStorage.wishlists = localStorage.wishlists ? localStorage.wishlists : "";
+    if (typeof Storage !== "undefined") {
+        localStorage.wishlists = localStorage.wishlists
+            ? localStorage.wishlists
+            : "";
     }
-    var getIndexOfWishlist = function(id) {
+    var getIndexOfWishlist = function (id) {
         var wishlistIndex = -1;
         var wishlists = getAllWishlists();
-        $.each(wishlists, function(index, value) {
+        $.each(wishlists, function (index, value) {
             if (value.id == id) {
                 wishlistIndex = index;
                 return;
             }
         });
         return wishlistIndex;
-    }
-    var setAllWishlists = function(wishlists) {
+    };
+    var setAllWishlists = function (wishlists) {
         localStorage.wishlists = JSON.stringify(wishlists);
-    }
-    var addWishlist = function(id, name, cat, price, image) {
+    };
+    var addWishlist = function (id, name, cat, price, image) {
         var wishlists = getAllWishlists();
         wishlists.push({
             id: id,
             name: name,
             cat: cat,
             price: price,
-            image: image
+            image: image,
         });
         setAllWishlists(wishlists);
-    }
+    };
 
     /*
     PUBLIC
     */
-    var getAllWishlists = function() {
+    var getAllWishlists = function () {
         try {
             var wishlists = JSON.parse(localStorage.wishlists);
             return wishlists;
         } catch (e) {
             return [];
         }
-    }
-    var updatePoduct = function(id) {
+    };
+    var updatePoduct = function (id) {
         var wishlistIndex = getIndexOfWishlist(id);
         if (wishlistIndex < 0) {
             return false;
@@ -56,22 +58,22 @@ var WishlistManager = (function() {
         var wishlists = getAllWishlists();
         setAllWishlists(wishlists);
         return true;
-    }
-    var setWishlist = function(id, name, cat, price, image) {
+    };
+    var setWishlist = function (id, name, cat, price, image) {
         if (typeof id === "undefined") {
-            console.error("id required")
+            console.error("id required");
             return false;
         }
         if (typeof name === "undefined") {
-            console.error("name required")
+            console.error("name required");
             return false;
         }
         if (typeof image === "undefined") {
-            console.error("image required")
+            console.error("image required");
             return false;
         }
         if (!$.isNumeric(price)) {
-            console.error("price is not a number")
+            console.error("price is not a number");
             return false;
         }
         cat = typeof cat === "undefined" ? "" : cat;
@@ -81,25 +83,25 @@ var WishlistManager = (function() {
         } else {
             removeWishlist(id);
         }
-    }
-    var clearWishlist = function() {
+    };
+    var clearWishlist = function () {
         setAllWishlists([]);
-    }
-    var removeWishlist = function(id) {
+    };
+    var removeWishlist = function (id) {
         var wishlists = getAllWishlists();
-        wishlists = $.grep(wishlists, function(value, index) {
+        wishlists = $.grep(wishlists, function (value, index) {
             return value.id != id;
         });
         setAllWishlists(wishlists);
-    }
-    var getTotalQuantityOfWishlist = function() {
+    };
+    var getTotalQuantityOfWishlist = function () {
         var total = 0;
         var wishlists = getAllWishlists();
-        $.each(wishlists, function(index, value) {
+        $.each(wishlists, function (index, value) {
             total += 1;
         });
         return total;
-    }
+    };
 
     objToReturn.getIndexOfWishlist = getIndexOfWishlist;
     objToReturn.getAllWishlists = getAllWishlists;
@@ -109,87 +111,97 @@ var WishlistManager = (function() {
     objToReturn.removeWishlist = removeWishlist;
     objToReturn.getTotalQuantityOfWishlist = getTotalQuantityOfWishlist;
     return objToReturn;
-}());
+})();
 
-$(".add-wishlist").each(function(index) {
-    var $target = $(this).closest('.item-product');
-    var id = $target.data('id');
+$(".add-wishlist").each(function (index) {
+    var $target = $(this).closest(".item-product");
+    var id = $target.data("id");
     var wishlistIndex = WishlistManager.getIndexOfWishlist(id);
     if (wishlistIndex < 0) {
-        $(this).removeClass('wishlist-added');
+        $(this).removeClass("wishlist-added");
     } else {
-        $(this).addClass('wishlist-added');
+        $(this).addClass("wishlist-added");
     }
 });
 
-$(".add-wishlist").click(function(event) {
+$(".add-wishlist").click(function (event) {
     event.preventDefault();
-    $(this).toggleClass('wishlist-added');
-    var $target = $(this).closest('.item-product');
-    var id = $target.data('id');
-    var name = $target.data('name');
-    var cat = $target.data('cat');
-    var price = $target.data('price');
-    var image = $target.data('img');
+    $(this).toggleClass("wishlist-added");
+    var $target = $(this).closest(".item-product");
+    var id = $target.data("id");
+    var name = $target.data("name");
+    var cat = $target.data("cat");
+    var price = $target.data("price");
+    var image = $target.data("img");
 
     WishlistManager.setWishlist(id, name, cat, price, image);
-    $('.wishlist-quantity').text(WishlistManager.getTotalQuantityOfWishlist());
+    $(".wishlist-quantity").text(WishlistManager.getTotalQuantityOfWishlist());
 });
 
-var wishlistTable = function() {
-    $('.table-wishlist tbody').empty();
+var wishlistTable = function () {
+    $(".table-wishlist tbody").empty();
     var wishlists = WishlistManager.getAllWishlists();
-    wishlists.length ?
-        $.each(wishlists, function() {
-            $('.table-wishlist tbody').append(`
-            <tr data-id="${this.id}" data-name="${this.name}" data-cat="${this.cat}" data-price="${this.price}", data-quantity="1", data-img="${this.image}">
+    wishlists.length
+        ? $.each(wishlists, function () {
+              $(".table-wishlist tbody").append(`
+            <tr data-id="${
+                this.id
+            }" data-name="${this.name}" data-cat="${this.cat}" data-price="${this.price}", data-quantity="1", data-img="${this.image}">
                 <td class="product-thumb">
-                    <a href="javascript:;"><img src="${this.image}" alt="${this.name}"></a>
+                    <a href="javascript:;"><img src="${
+                        this.image
+                    }" alt="${this.name}"></a>
                 </td>
-                <td class="product-name"><a href="javascript:;">${this.name}</a></td>
+                <td class="product-name"><a href="javascript:;">${
+                    this.name
+                }</a></td>
                 <td class="product-price">${formatNumber(this.price)}</td>
                 <td class="product-add"><a href="javascript:;">Add to Cart</a></td>
                 <td class="product-remove"><a href="javascript:;"><i class="far fa-trash"></i></a></td>
             </tr>`);
-        }) :
-        $('.table-wishlist tbody').append('<tr><td colspan="6">Nothing ...</td></tr>');
-}
+          })
+        : $(".table-wishlist tbody").append(
+              '<tr><td colspan="6">Nothing ...</td></tr>'
+          );
+};
 
-$(document).on('click', '.table-wishlist tbody .product-remove a', function() {
-    var $target = $(this).closest('tr');
+$(document).on("click", ".table-wishlist tbody .product-remove a", function () {
+    var $target = $(this).closest("tr");
     var id = $target.data("id");
-    $target.hide(300, function() {
+    $target.hide(300, function () {
         WishlistManager.removeWishlist(id);
         wishlistTable();
-        $('.wishlist-quantity').text(WishlistManager.getTotalQuantityOfWishlist());
+        $(".wishlist-quantity").text(
+            WishlistManager.getTotalQuantityOfWishlist()
+        );
     });
 });
 
-$('.wishlist-quantity').text(WishlistManager.getTotalQuantityOfWishlist());
+$(".wishlist-quantity").text(WishlistManager.getTotalQuantityOfWishlist());
 wishlistTable();
 
-var ProductManager = (function() {
+var ProductManager = (function () {
     var objToReturn = {};
 
     /*
     PRIVATE
     */
     localStorage.products = localStorage.products ? localStorage.products : "";
-    var getIndexOfProduct = function(id) {
+    var getIndexOfProduct = function (id) {
         var productIndex = -1;
         var products = getAllProducts();
-        $.each(products, function(index, value) {
+        $.each(products, function (index, value) {
             if (value.id == id) {
                 productIndex = index;
                 return;
             }
         });
         return productIndex;
-    }
-    var setAllProducts = function(products) {
+    };
+    var setAllProducts = function (products) {
         localStorage.products = JSON.stringify(products);
-    }
-    var addProduct = function(id, name, cat, price, quantity, image) {
+    };
+    var addProduct = function (id, name, cat, price, quantity, image) {
         var products = getAllProducts();
         products.push({
             id: id,
@@ -197,47 +209,50 @@ var ProductManager = (function() {
             cat: cat,
             price: price,
             quantity: quantity,
-            image: image
+            image: image,
         });
         setAllProducts(products);
-    }
+    };
 
     /*
     PUBLIC
     */
-    var getAllProducts = function() {
+    var getAllProducts = function () {
         try {
             var products = JSON.parse(localStorage.products);
             return products;
         } catch (e) {
             return [];
         }
-    }
-    var updatePoduct = function(id, quantity) {
+    };
+    var updatePoduct = function (id, quantity) {
         var productIndex = getIndexOfProduct(id);
         if (productIndex < 0) {
             return false;
         }
         var products = getAllProducts();
-        products[productIndex].quantity = typeof quantity === "undefined" ? products[productIndex].quantity * 1 + 1 : quantity;
+        products[productIndex].quantity =
+            typeof quantity === "undefined"
+                ? products[productIndex].quantity * 1 + 1
+                : quantity;
         setAllProducts(products);
         return true;
-    }
-    var setProduct = function(id, name, cat, price, quantity, image) {
+    };
+    var setProduct = function (id, name, cat, price, quantity, image) {
         if (typeof id === "undefined") {
-            console.error("id required")
+            console.error("id required");
             return false;
         }
         if (typeof name === "undefined") {
-            console.error("name required")
+            console.error("name required");
             return false;
         }
         if (typeof image === "undefined") {
-            console.error("image required")
+            console.error("image required");
             return false;
         }
         if (!$.isNumeric(price)) {
-            console.error("price is not a number")
+            console.error("price is not a number");
             return false;
         }
         if (!$.isNumeric(quantity)) {
@@ -249,25 +264,25 @@ var ProductManager = (function() {
         if (!updatePoduct(id)) {
             addProduct(id, name, cat, price, quantity, image);
         }
-    }
-    var clearProduct = function() {
+    };
+    var clearProduct = function () {
         setAllProducts([]);
-    }
-    var removeProduct = function(id) {
+    };
+    var removeProduct = function (id) {
         var products = getAllProducts();
-        products = $.grep(products, function(value, index) {
+        products = $.grep(products, function (value, index) {
             return value.id != id;
         });
         setAllProducts(products);
-    }
-    var getTotalQuantityOfProduct = function() {
+    };
+    var getTotalQuantityOfProduct = function () {
         var total = 0;
         var products = getAllProducts();
-        $.each(products, function(index, value) {
+        $.each(products, function (index, value) {
             total += value.quantity * 1;
         });
         return total;
-    }
+    };
 
     objToReturn.getAllProducts = getAllProducts;
     objToReturn.updatePoduct = updatePoduct;
@@ -276,75 +291,85 @@ var ProductManager = (function() {
     objToReturn.removeProduct = removeProduct;
     objToReturn.getTotalQuantityOfProduct = getTotalQuantityOfProduct;
     return objToReturn;
-}());
+})();
 
-$(".add-cart").click(function(event) {
+$(".add-cart").click(function (event) {
     event.preventDefault();
-    var $target = $(this).closest('.item-product');
-    var id = $target.data('id');
-    var name = $target.data('name');
-    var cat = $target.data('cat');
-    var price = $target.data('price');
-    var quantity = $target.data('quantity');
-    var image = $target.data('img');
+    var $target = $(this).closest(".item-product");
+    var id = $target.data("id");
+    var name = $target.data("name");
+    var cat = $target.data("cat");
+    var price = $target.data("price");
+    var quantity = $target.data("quantity");
+    var image = $target.data("img");
 
     ProductManager.setProduct(id, name, cat, price, quantity, image);
-    $('.cart-quantity').text(ProductManager.getTotalQuantityOfProduct());
+    $(".cart-quantity").text(ProductManager.getTotalQuantityOfProduct());
 });
 
-$(".product-add a").click(function(event) {
+$(".product-add a").click(function (event) {
     event.preventDefault();
-    var $target = $(this).closest('tr');
-    var id = $target.data('id');
-    var name = $target.data('name');
-    var cat = $target.data('cat');
-    var price = $target.data('price');
-    var quantity = $target.data('quantity');
-    var image = $target.data('img');
+    var $target = $(this).closest("tr");
+    var id = $target.data("id");
+    var name = $target.data("name");
+    var cat = $target.data("cat");
+    var price = $target.data("price");
+    var quantity = $target.data("quantity");
+    var image = $target.data("img");
 
     ProductManager.setProduct(id, name, cat, price, quantity, image);
-    $('.cart-quantity').text(ProductManager.getTotalQuantityOfProduct());
+    $(".cart-quantity").text(ProductManager.getTotalQuantityOfProduct());
 });
 
-var productTable = function() {
-    $('.table-cart tbody').empty();
+var productTable = function () {
+    $(".table-cart tbody").empty();
     var products = ProductManager.getAllProducts();
     productTotal(products);
-    products.length ?
-        $.each(products, function() {
-            var total = formatNumber(this.quantity * this.price);
-            $('.table-cart tbody').append(`
+    products.length
+        ? $.each(products, function () {
+              var total = formatNumber(this.quantity * this.price);
+              $(".table-cart tbody").append(`
             <tr data-id="${this.id}" data-price="${this.price}">
                 <td class="product-thumb">
-                    <a href="javascript:;"><img src="${this.image}" alt="${this.name}"></a>
+                    <a href="javascript:;"><img src="${
+                        this.image
+                    }" alt="${this.name}"></a>
                 </td>
-                <td class="product-name"><a href="javascript:;">${this.name}</a></td>
+                <td class="product-name"><a href="javascript:;">${
+                    this.name
+                }</a></td>
                 <td class="product-price">${formatNumber(this.price)}</td>
-                <td class="product-quantity"><input min="1" max="100" value="${this.quantity}" type="number"></td>
+                <td class="product-quantity"><input min="1" max="100" value="${
+                    this.quantity
+                }" type="number"></td>
                 <td class="product-total">${total}</td>
                 <td class="product-remove"><a href="javascript:;"><i class="far fa-trash"></i></a></td>
             </tr>`);
-        }) :
-        $('.table-cart tbody').append('<tr><td colspan="6">Nothing ...</td></tr>');
-}
+          })
+        : $(".table-cart tbody").append(
+              '<tr><td colspan="6">Nothing ...</td></tr>'
+          );
+};
 
-var checkoutTable = function() {
-    $('.table-checkout tbody').empty();
+var checkoutTable = function () {
+    $(".table-checkout tbody").empty();
     var products = ProductManager.getAllProducts();
-    products.length ?
-        $.each(products, function() {
-            var total = formatNumber(this.quantity * this.price);
-            $('.table-checkout tbody').append(`
+    products.length
+        ? $.each(products, function () {
+              var total = formatNumber(this.quantity * this.price);
+              $(".table-checkout tbody").append(`
             <tr>
                 <td>${this.name} <strong> × ${this.quantity}</strong></td>
                 <td>${total}</td>
             </tr>`);
-        }) :
-        $('.table-checkout tbody').append('<tr><td colspan="6">Nothing ...</td></tr>');
-}
+          })
+        : $(".table-checkout tbody").append(
+              '<tr><td colspan="6">Nothing ...</td></tr>'
+          );
+};
 
-$(document).on("input", ".table-cart .product-quantity input", function() {
-    var $target = $(this).closest('tr');
+$(document).on("input", ".table-cart .product-quantity input", function () {
+    var $target = $(this).closest("tr");
     var price = $target.data("price");
     var id = $target.data("id");
     var quantity = $(this).val();
@@ -352,33 +377,33 @@ $(document).on("input", ".table-cart .product-quantity input", function() {
 
     $(this).parent("td").next(".product-total").text(total);
     ProductManager.updatePoduct(id, quantity);
-    $('.cart-quantity').text(ProductManager.getTotalQuantityOfProduct());
+    $(".cart-quantity").text(ProductManager.getTotalQuantityOfProduct());
     productTotal(ProductManager.getAllProducts());
 });
 
-var productTotal = function(products) {
+var productTotal = function (products) {
     var total = 0;
-    $.each(products, function() {
+    $.each(products, function () {
         total += this.quantity * this.price;
     });
     $(".cart-price, .cart-total").text(formatNumber(total));
-}
+};
 
-$(document).on('click', '.table-cart tbody .product-remove a', function() {
-    var $target = $(this).closest('tr');
+$(document).on("click", ".table-cart tbody .product-remove a", function () {
+    var $target = $(this).closest("tr");
     var id = $target.data("id");
-    $target.hide(300, function() {
+    $target.hide(300, function () {
         ProductManager.removeProduct(id);
         productTable();
-        $('.cart-quantity').text(ProductManager.getTotalQuantityOfProduct());
+        $(".cart-quantity").text(ProductManager.getTotalQuantityOfProduct());
     });
 });
 
-$('.cart-quantity').text(ProductManager.getTotalQuantityOfProduct());
+$(".cart-quantity").text(ProductManager.getTotalQuantityOfProduct());
 productTable();
 checkoutTable();
 
-var UserManager = (function() {
+var UserManager = (function () {
     var objToReturn = {};
 
     /*
@@ -386,81 +411,91 @@ var UserManager = (function() {
     */
     localStorage.users = localStorage.users ? localStorage.users : "";
     localStorage.isLogin = localStorage.isLogin ? localStorage.isLogin : "";
-    var getIndexOfUser = function(username, password) {
+    var getIndexOfUser = function (username) {
         var userIndex = -1;
         var users = getAllUsers();
-        $.each(users, function(index, value) {
-            if (value.username === username && value.password === password) {
+        $.each(users, function (index, value) {
+            if (value.username === username) {
                 userIndex = index;
                 return;
             }
         });
         return userIndex;
-    }
-    var setAllUsers = function(users) {
+    };
+    var setAllUsers = function (users) {
         localStorage.users = JSON.stringify(users);
-    }
-    var addUser = function(username, password) {
+    };
+    var addUser = function (username, password) {
         var users = getAllUsers();
         users.push({
             username: username,
-            password: password
+            password: password,
         });
         setAllUsers(users);
-    }
+    };
 
     /*
     PUBLIC
     */
-    var getAllUsers = function() {
+    var getAllUsers = function () {
         try {
             var users = JSON.parse(localStorage.users);
             return users;
         } catch (e) {
             return [];
         }
-    }
-    var setUser = function(username, password) {
+    };
+    var setUser = function (username, password) {
         if (typeof username === "undefined") {
-            console.error("username required")
+            console.error("username required");
             return false;
         }
         if (typeof password === "undefined") {
-            console.error("password required")
+            console.error("password required");
             return false;
         }
 
-        var userIndex = getIndexOfUser(username, password);
+        var userIndex = getIndexOfUser(username);
         if (userIndex < 0) {
             addUser(username, password);
         }
-    }
-    var loginUser = function(username, password) {
-        var userIndex = getIndexOfUser(username, password);
-        if (userIndex < 0) {
-            return false;
-        }
+    };
+    var loginUser = function (username, password) {
+        var isLogin = false;
+        var users = getAllUsers();
+        $.each(users, function (index, value) {
+            var userIndex = getIndexOfUser(username);
+            if (userIndex >= 0) {
+                if (
+                    value.username === username &&
+                    value.password === password
+                ) {
+                    localStorage.isLogin = username;
+                    isLogin = true;
+                    return;
+                }
+            }
+        });
 
-        localStorage.isLogin = username;
-        return true;
-    }
-    var logoutUser = function() {
+        return isLogin;
+    };
+    var logoutUser = function () {
         localStorage.isLogin = "";
-    }
-    var checkLogin = function() {
+    };
+    var isLogin = function () {
         var user = localStorage.isLogin;
-        if (user !== null || user !== '') {
+        if (user !== null || user !== "") {
             return user;
         }
 
         return false;
-    }
+    };
 
     objToReturn.getIndexOfUser = getIndexOfUser;
     objToReturn.getAllUsers = getAllUsers;
     objToReturn.setUser = setUser;
     objToReturn.loginUser = loginUser;
     objToReturn.logoutUser = logoutUser;
-    objToReturn.checkLogin = checkLogin;
+    objToReturn.isLogin = isLogin;
     return objToReturn;
-}());
+})();
