@@ -49,141 +49,22 @@ $(function () {
         $(".overlay").hide();
     });
 
-    // Shop JS
-    $(".view-grip").click(function (event) {
-        $(".shop-item").show(600);
-        $(".shop-item-list").hide();
-        $(".view-grip").css("color", "yellowgreen");
-        $(".view-list").css("color", "black");
-    });
-    $(".view-list").click(function (event) {
-        $(".shop-item-list").show(600);
-        $(".shop-item").hide();
-        $(".view-grip").css("color", "black");
-        $(".view-list").css("color", "yellowgreen");
+    /*---Check login---*/
+    $(function() {
+        if (typeof(Storage) !== 'undefined') {
+            if (UserManager.checkLogin()) {
+                $('.header-account').html('<i class="fas fa-user"></i> <span>Hello: ' + UserManager.checkLogin() + '</span> | <a id="btn_logout" data-toggle="tooltip" title="Log out"><span>Log out</span></a>');
+                $('[data-toggle="tooltip"]').tooltip();
+                $('#header-account1').html('<a id="btn_logout">Log out</a>');
+                $('[data-toggle="tooltip"]').tooltip(); 
+            }
+        }
     });
 
-    // Product JS
-    $(".btn-wishlist").click(function (event) {
-        event.preventDefault();
-        var id = 1;
-        var name = "Circulus Cabinet";
-        var cat = "wardrobe";
-        var price = "1125.00";
-        var image = "assets/images/products/wardrobe/pro-01.jpg";
-
-        WishlistManager.setWishlist(id, name, cat, price, image);
-        $(".wishlist-quantity").text(
-            WishlistManager.getTotalQuantityOfWishlist()
-        );
-    });
-
-    $(".btn-cart").click(function (event) {
-        event.preventDefault();
-        var id = 1;
-        var name = "Circulus Cabinet";
-        var cat = "wardrobe";
-        var price = "1125.00";
-        var quantity = $("#product-quantity").val();
-        var image = "assets/images/products/wardrobe/pro-01.jpg";
-    
-        ProductManager.setProduct(id, name, cat, price, quantity, image);
-        $(".cart-quantity").text(ProductManager.getTotalQuantityOfProduct());
-    });
-
-    /*---Validate login---*/
-    $("#form_Login").validate({
-        rules: {
-            login_Email: {
-                required: true,
-                email: true,
-                normalizer: function (value) {
-                    return $.trim(value);
-                },
-            },
-            login_Password: {
-                required: true,
-                minlength: 6,
-                normalizer: function (value) {
-                    return $.trim(value);
-                },
-            },
-        },
-        messages: {
-            login_Email: {
-                required: "Enter your email",
-                email: "Please enter a valid email address.",
-            },
-            login_Password: {
-                required: "Enter your password",
-                minlength: "Please enter at least 6 characters.",
-            },
-        },
-        highlight: function (input) {
-            $(input).addClass("is-invalid");
-        },
-        unhighlight: function (input) {
-            $(input).removeClass("is-invalid");
-        },
-        errorPlacement: function (error, element) {
-            $(element).next().append(error);
-        },
-        submitHandler: function () {
-            alert("Success");
-        },
-    });
-
-    /*---Validate register---*/
-    $("#form_Register").validate({
-        rules: {
-            register_Email: {
-                required: true,
-                email: true,
-                normalizer: function (value) {
-                    return $.trim(value);
-                },
-            },
-            register_Password: {
-                required: true,
-                minlength: 6,
-                normalizer: function (value) {
-                    return $.trim(value);
-                },
-            },
-            Password_2: {
-                required: true,
-                minlength: 6,
-                normalizer: function (value) {
-                    return $.trim(value);
-                },
-                equalTo: "#register_Password",
-            },
-        },
-        messages: {
-            register_Email: {
-                required: "Enter your email",
-                email: "Please enter a valid email address.",
-            },
-            register_Password: {
-                required: "Enter your password",
-                minlength: "Please enter at least 6 characters.",
-            },
-            Password_2: {
-                required: "Enter your password",
-                minlength: "Please enter at least 6 characters.",
-            },
-        },
-        highlight: function (input) {
-            $(input).addClass("is-invalid");
-        },
-        unhighlight: function (input) {
-            $(input).removeClass("is-invalid");
-        },
-        errorPlacement: function (error, element) {
-            $(element).next().append(error);
-        },
-        submitHandler: function () {
-            alert("Success");
-        },
+    /*---Click logout---*/
+    $(document).on('click', '#btn_logout', function() {
+        alert('Logged out successfully!');
+        UserManager.logoutUser();
+        location.replace('index.html');
     });
 });
