@@ -2,21 +2,21 @@ function formatNumber(num) {
     return " USD " + num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1.");
 }
 
-var WishlistManager = (function () {
+var WishlistManager = (function() {
     var objToReturn = {};
 
     /*
     PRIVATE
     */
     if (typeof Storage !== "undefined") {
-        localStorage.wishlists = localStorage.wishlists
-            ? localStorage.wishlists
-            : "";
+        localStorage.wishlists = localStorage.wishlists ?
+            localStorage.wishlists :
+            "";
     }
-    var getIndexOfWishlist = function (id) {
+    var getIndexOfWishlist = function(id) {
         var wishlistIndex = -1;
         var wishlists = getAllWishlists();
-        $.each(wishlists, function (index, value) {
+        $.each(wishlists, function(index, value) {
             if (value.id == id) {
                 wishlistIndex = index;
                 return;
@@ -24,10 +24,10 @@ var WishlistManager = (function () {
         });
         return wishlistIndex;
     };
-    var setAllWishlists = function (wishlists) {
+    var setAllWishlists = function(wishlists) {
         localStorage.wishlists = JSON.stringify(wishlists);
     };
-    var addWishlist = function (id, name, cat, price, image) {
+    var addWishlist = function(id, name, cat, price, image) {
         var wishlists = getAllWishlists();
         wishlists.push({
             id: id,
@@ -42,7 +42,7 @@ var WishlistManager = (function () {
     /*
     PUBLIC
     */
-    var getAllWishlists = function () {
+    var getAllWishlists = function() {
         try {
             var wishlists = JSON.parse(localStorage.wishlists);
             return wishlists;
@@ -50,7 +50,7 @@ var WishlistManager = (function () {
             return [];
         }
     };
-    var updatePoduct = function (id) {
+    var updatePoduct = function(id) {
         var wishlistIndex = getIndexOfWishlist(id);
         if (wishlistIndex < 0) {
             return false;
@@ -59,7 +59,7 @@ var WishlistManager = (function () {
         setAllWishlists(wishlists);
         return true;
     };
-    var setWishlist = function (id, name, cat, price, image) {
+    var setWishlist = function(id, name, cat, price, image) {
         if (typeof id === "undefined") {
             console.error("id required");
             return false;
@@ -84,20 +84,20 @@ var WishlistManager = (function () {
             removeWishlist(id);
         }
     };
-    var clearWishlist = function () {
+    var clearWishlist = function() {
         setAllWishlists([]);
     };
-    var removeWishlist = function (id) {
+    var removeWishlist = function(id) {
         var wishlists = getAllWishlists();
-        wishlists = $.grep(wishlists, function (value, index) {
+        wishlists = $.grep(wishlists, function(value, index) {
             return value.id != id;
         });
         setAllWishlists(wishlists);
     };
-    var getTotalQuantityOfWishlist = function () {
+    var getTotalQuantityOfWishlist = function() {
         var total = 0;
         var wishlists = getAllWishlists();
-        $.each(wishlists, function (index, value) {
+        $.each(wishlists, function(index, value) {
             total += 1;
         });
         return total;
@@ -113,7 +113,7 @@ var WishlistManager = (function () {
     return objToReturn;
 })();
 
-$(".add-wishlist").each(function (index) {
+$(".add-wishlist").each(function(index) {
     var $target = $(this).closest(".item-product");
     var id = $target.data("id");
     var wishlistIndex = WishlistManager.getIndexOfWishlist(id);
@@ -124,7 +124,7 @@ $(".add-wishlist").each(function (index) {
     }
 });
 
-$(".add-wishlist").click(function (event) {
+$(".add-wishlist").click(function(event) {
     event.preventDefault();
     $(this).toggleClass("wishlist-added");
     var $target = $(this).closest(".item-product");
@@ -138,12 +138,12 @@ $(".add-wishlist").click(function (event) {
     $(".wishlist-quantity").text(WishlistManager.getTotalQuantityOfWishlist());
 });
 
-var wishlistTable = function () {
+var wishlistTable = function() {
     $(".table-wishlist tbody").empty();
     var wishlists = WishlistManager.getAllWishlists();
-    wishlists.length
-        ? $.each(wishlists, function () {
-              $(".table-wishlist tbody").append(`
+    wishlists.length ?
+        $.each(wishlists, function() {
+            $(".table-wishlist tbody").append(`
             <tr data-id="${
                 this.id
             }" data-name="${this.name}" data-cat="${this.cat}" data-price="${this.price}", data-quantity="1", data-img="${this.image}">
@@ -159,16 +159,16 @@ var wishlistTable = function () {
                 <td class="product-add"><a href="javascript:;">Add to Cart</a></td>
                 <td class="product-remove"><a href="javascript:;"><i class="far fa-trash"></i></a></td>
             </tr>`);
-          })
-        : $(".table-wishlist tbody").append(
-              '<tr><td colspan="6">Nothing ...</td></tr>'
-          );
+        }) :
+        $(".table-wishlist tbody").append(
+            '<tr><td colspan="6">Nothing ...</td></tr>'
+        );
 };
 
-$(document).on("click", ".table-wishlist tbody .product-remove a", function () {
+$(document).on("click", ".table-wishlist tbody .product-remove a", function() {
     var $target = $(this).closest("tr");
     var id = $target.data("id");
-    $target.hide(300, function () {
+    $target.hide(300, function() {
         WishlistManager.removeWishlist(id);
         wishlistTable();
         $(".wishlist-quantity").text(
@@ -180,17 +180,17 @@ $(document).on("click", ".table-wishlist tbody .product-remove a", function () {
 $(".wishlist-quantity").text(WishlistManager.getTotalQuantityOfWishlist());
 wishlistTable();
 
-var ProductManager = (function () {
+var ProductManager = (function() {
     var objToReturn = {};
 
     /*
     PRIVATE
     */
     localStorage.products = localStorage.products ? localStorage.products : "";
-    var getIndexOfProduct = function (id) {
+    var getIndexOfProduct = function(id) {
         var productIndex = -1;
         var products = getAllProducts();
-        $.each(products, function (index, value) {
+        $.each(products, function(index, value) {
             if (value.id == id) {
                 productIndex = index;
                 return;
@@ -198,10 +198,10 @@ var ProductManager = (function () {
         });
         return productIndex;
     };
-    var setAllProducts = function (products) {
+    var setAllProducts = function(products) {
         localStorage.products = JSON.stringify(products);
     };
-    var addProduct = function (id, name, cat, price, quantity, image) {
+    var addProduct = function(id, name, cat, price, quantity, image) {
         var products = getAllProducts();
         products.push({
             id: id,
@@ -217,7 +217,7 @@ var ProductManager = (function () {
     /*
     PUBLIC
     */
-    var getAllProducts = function () {
+    var getAllProducts = function() {
         try {
             var products = JSON.parse(localStorage.products);
             return products;
@@ -225,20 +225,20 @@ var ProductManager = (function () {
             return [];
         }
     };
-    var updatePoduct = function (id, quantity) {
+    var updatePoduct = function(id, quantity) {
         var productIndex = getIndexOfProduct(id);
         if (productIndex < 0) {
             return false;
         }
         var products = getAllProducts();
         products[productIndex].quantity =
-            typeof quantity === "undefined"
-                ? products[productIndex].quantity * 1 + 1
-                : quantity;
+            typeof quantity === "undefined" ?
+            products[productIndex].quantity * 1 + 1 :
+            quantity;
         setAllProducts(products);
         return true;
     };
-    var setProduct = function (id, name, cat, price, quantity, image) {
+    var setProduct = function(id, name, cat, price, quantity, image) {
         if (typeof id === "undefined") {
             console.error("id required");
             return false;
@@ -265,20 +265,20 @@ var ProductManager = (function () {
             addProduct(id, name, cat, price, quantity, image);
         }
     };
-    var clearProduct = function () {
+    var clearProduct = function() {
         setAllProducts([]);
     };
-    var removeProduct = function (id) {
+    var removeProduct = function(id) {
         var products = getAllProducts();
-        products = $.grep(products, function (value, index) {
+        products = $.grep(products, function(value, index) {
             return value.id != id;
         });
         setAllProducts(products);
     };
-    var getTotalQuantityOfProduct = function () {
+    var getTotalQuantityOfProduct = function() {
         var total = 0;
         var products = getAllProducts();
-        $.each(products, function (index, value) {
+        $.each(products, function(index, value) {
             total += value.quantity * 1;
         });
         return total;
@@ -293,7 +293,7 @@ var ProductManager = (function () {
     return objToReturn;
 })();
 
-$(".add-cart").click(function (event) {
+$(".add-cart").click(function(event) {
     event.preventDefault();
     var $target = $(this).closest(".item-product");
     var id = $target.data("id");
@@ -307,7 +307,7 @@ $(".add-cart").click(function (event) {
     $(".cart-quantity").text(ProductManager.getTotalQuantityOfProduct());
 });
 
-$(".product-add a").click(function (event) {
+$(".product-add a").click(function(event) {
     event.preventDefault();
     var $target = $(this).closest("tr");
     var id = $target.data("id");
@@ -321,14 +321,14 @@ $(".product-add a").click(function (event) {
     $(".cart-quantity").text(ProductManager.getTotalQuantityOfProduct());
 });
 
-var productTable = function () {
+var productTable = function() {
     $(".table-cart tbody").empty();
     var products = ProductManager.getAllProducts();
     productTotal(products);
-    products.length
-        ? $.each(products, function () {
-              var total = formatNumber(this.quantity * this.price);
-              $(".table-cart tbody").append(`
+    products.length ?
+        $.each(products, function() {
+            var total = formatNumber(this.quantity * this.price);
+            $(".table-cart tbody").append(`
             <tr data-id="${this.id}" data-price="${this.price}">
                 <td class="product-thumb">
                     <a href="javascript:;"><img src="${
@@ -345,30 +345,30 @@ var productTable = function () {
                 <td class="product-total">${total}</td>
                 <td class="product-remove"><a href="javascript:;"><i class="far fa-trash"></i></a></td>
             </tr>`);
-          })
-        : $(".table-cart tbody").append(
-              '<tr><td colspan="6">Nothing ...</td></tr>'
-          );
+        }) :
+        $(".table-cart tbody").append(
+            '<tr><td colspan="6">Nothing ...</td></tr>'
+        );
 };
 
-var checkoutTable = function () {
+var checkoutTable = function() {
     $(".table-checkout tbody").empty();
     var products = ProductManager.getAllProducts();
-    products.length
-        ? $.each(products, function () {
-              var total = formatNumber(this.quantity * this.price);
-              $(".table-checkout tbody").append(`
+    products.length ?
+        $.each(products, function() {
+            var total = formatNumber(this.quantity * this.price);
+            $(".table-checkout tbody").append(`
             <tr>
                 <td>${this.name} <strong> × ${this.quantity}</strong></td>
                 <td>${total}</td>
             </tr>`);
-          })
-        : $(".table-checkout tbody").append(
-              '<tr><td colspan="6">Nothing ...</td></tr>'
-          );
+        }) :
+        $(".table-checkout tbody").append(
+            '<tr><td colspan="6">Nothing ...</td></tr>'
+        );
 };
 
-$(document).on("input", ".table-cart .product-quantity input", function () {
+$(document).on("input", ".table-cart .product-quantity input", function() {
     var $target = $(this).closest("tr");
     var price = $target.data("price");
     var id = $target.data("id");
@@ -381,18 +381,18 @@ $(document).on("input", ".table-cart .product-quantity input", function () {
     productTotal(ProductManager.getAllProducts());
 });
 
-var productTotal = function (products) {
+var productTotal = function(products) {
     var total = 0;
-    $.each(products, function () {
+    $.each(products, function() {
         total += this.quantity * this.price;
     });
     $(".cart-price, .cart-total").text(formatNumber(total));
 };
 
-$(document).on("click", ".table-cart tbody .product-remove a", function () {
+$(document).on("click", ".table-cart tbody .product-remove a", function() {
     var $target = $(this).closest("tr");
     var id = $target.data("id");
-    $target.hide(300, function () {
+    $target.hide(300, function() {
         ProductManager.removeProduct(id);
         productTable();
         $(".cart-quantity").text(ProductManager.getTotalQuantityOfProduct());
@@ -403,7 +403,7 @@ $(".cart-quantity").text(ProductManager.getTotalQuantityOfProduct());
 productTable();
 checkoutTable();
 
-var UserManager = (function () {
+var UserManager = (function() {
     var objToReturn = {};
 
     /*
@@ -411,10 +411,10 @@ var UserManager = (function () {
     */
     localStorage.users = localStorage.users ? localStorage.users : "";
     localStorage.isLogin = localStorage.isLogin ? localStorage.isLogin : "";
-    var getIndexOfUser = function (username) {
+    var getIndexOfUser = function(username) {
         var userIndex = -1;
         var users = getAllUsers();
-        $.each(users, function (index, value) {
+        $.each(users, function(index, value) {
             if (value.username === username) {
                 userIndex = index;
                 return;
@@ -422,10 +422,10 @@ var UserManager = (function () {
         });
         return userIndex;
     };
-    var setAllUsers = function (users) {
+    var setAllUsers = function(users) {
         localStorage.users = JSON.stringify(users);
     };
-    var addUser = function (username, password) {
+    var addUser = function(username, password) {
         var users = getAllUsers();
         users.push({
             username: username,
@@ -437,7 +437,7 @@ var UserManager = (function () {
     /*
     PUBLIC
     */
-    var getAllUsers = function () {
+    var getAllUsers = function() {
         try {
             var users = JSON.parse(localStorage.users);
             return users;
@@ -445,7 +445,7 @@ var UserManager = (function () {
             return [];
         }
     };
-    var setUser = function (username, password) {
+    var setUser = function(username, password) {
         if (typeof username === "undefined") {
             console.error("username required");
             return false;
@@ -460,10 +460,10 @@ var UserManager = (function () {
             addUser(username, password);
         }
     };
-    var loginUser = function (username, password) {
+    var loginUser = function(username, password) {
         var isLogin = false;
         var users = getAllUsers();
-        $.each(users, function (index, value) {
+        $.each(users, function(index, value) {
             var userIndex = getIndexOfUser(username);
             if (userIndex >= 0) {
                 if (
@@ -479,10 +479,10 @@ var UserManager = (function () {
 
         return isLogin;
     };
-    var logoutUser = function () {
+    var logoutUser = function() {
         localStorage.isLogin = "";
     };
-    var isLogin = function () {
+    var isLogin = function() {
         var user = localStorage.isLogin;
         if (user !== null || user !== "") {
             return user;
